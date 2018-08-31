@@ -14,16 +14,28 @@
                 <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="ru-RU" dir="ltr">
                     <form class="wpcf7-form">
                         <span class="wpcf7-form-control-wrap">
-                            <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="search">
+                            <input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                         </span>
                     </form>
                 </div>
                 <div class="flex">
-                    <ul class="currency">
-                       <li>usd</li>
-                       <li>eur</li>
-                       <li>руб.</li>
-                    </ul>
+                   <div class="select currency">
+                       <input type="hidden" name="currency" value="currency">
+                       <div class="select_field">
+                           <div class="field usd">usd</div>
+                       </div>
+                       <ul>
+                            <li class="">
+                               <div class="field usd">usd</div>
+                            </li>
+                            <li class="">
+                               <div class="field eur">eur</div>
+                            </li>
+                            <li class="">
+                               <div class="field rub">руб.</div>
+                            </li>
+                       </ul>
+                    </div>
                     <a href="#" class="account">account</a>
                     <a href="#" class="favorites"></a>
                     <a href="#" class="basket"></a>
@@ -98,6 +110,42 @@
             </div>
         </div>
     </section>
+    <div class="range_screen">
+        <div class="wrapper">
+            <div class="designs_wr">
+                <div class="design_wr ver rings_sets">
+                    <div class="design">Rings sets</div>
+                </div>
+                <div class="design_wr sq classic">
+                    <div class="design"> Classic</div>
+                </div>
+                <div class="design_wr sq modern">
+                    <div class="design">Modern</div>
+                </div>
+                <div class="design_wr sq vintage">
+                    <div class="design">Vintage</div>
+                </div>
+                <div class="design_wr hor branch">
+                    <div class="design">Branch</div>
+                </div>
+                <div class="design_wr sq heavy">
+                    <div class="design">Heavy</div>
+                </div>
+                <div class="design_wr ver bridal_sets">
+                    <div class="design">Bridal sets</div>
+                </div>
+                <div class="design_wr ver nature_inspired">
+                    <div class="design">Nature inspired</div>
+                </div>
+                <div class="design_wr hor personalised">
+                    <div class="design">Personalised</div>
+                </div>
+                <div class="design_wr sq crown">
+                    <div class="design">Crown</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="instagram_screen">
         <div class="wrapper">
             <div class="caption">Follow our Instagram</div>

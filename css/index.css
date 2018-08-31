@@ -124,29 +124,96 @@ header .wpcf7-form-control-wrap::before {
     top: 5px;
 }
 
+header .wpcf7-form-control-wrap::after {
+    content: "search";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    padding-left: 40px;
+    font-size: 12px;
+    color: rgb(249, 245, 239);
+    text-transform: uppercase;
+}
+
 header .form input:not([type=submit]):focus {
 	border: none;
 }
 
-header .currency {
-    margin: 0;
-    padding: 0;
-}
-
-header .currency li {
-    list-style: none;
-    color: rgb(249, 245, 239);
-    text-transform: uppercase;
+header .select {
     position: relative;
 }
 
-header .currency li::after {
+header .select .select_field {
+    box-sizing: border-box;
+    font-size: 12px;
+    color: rgb(249, 245, 239);
+    text-transform: uppercase;
+    padding: 0 10px;
+    position: relative;
+}
+
+header .select .select_field:before{
     content: "";
     background: url(../images/sprites.svg) no-repeat -144px -26px;
 	width: 10px;
 	height: 10px;
     position: absolute;
     right: 0;
+    top: 7px;
+    -webkit-transition: all 0.5s linear 0s;
+    -moz-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+header .select.active .select_field:before {
+    top: 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+header .select ul {
+    display: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 40px;
+    left: 0;
+}
+
+header .select.active ul {
+	display:block;
+}
+
+header .select ul li {
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid #f9f5ef;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: rgb(36, 31, 22);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 10px;
+	cursor:default;
+}
+
+header .select ul li:hover {
+    background-color: #f9f5ef;
+}
+
+header .first_line a {
+    display: block;
+    margin: 0 15px;
 }
 
 header .account {
@@ -155,14 +222,12 @@ header .account {
 }
 
 header .favorites {
-    display: block;
     background: url(../images/sprites.svg) no-repeat -50px -10px;
 	width: 29px;
 	height: 26px;
 }
 
 header .basket {
-    display: block;
     background: url(../images/sprites.svg) no-repeat -94px -10px;
 	width: 24px;
 	height: 26px;
@@ -256,7 +321,7 @@ header .menu .with_arrow::after {
 }
 
 .slider_screen .background1 {
-    background: url(../images/branches_bg_1.jpg);
+    background: url(../images/birds_bg.png) rgb(188, 174, 149); 
     position: absolute;
     right: 0;
     top: 15px;
@@ -318,6 +383,136 @@ header .menu .with_arrow::after {
     position: absolute;
     left: 75px;
     bottom: 150px;
+}
+
+/* range_screen */
+
+.range_screen {
+    background: #f9f5ef;
+    padding: 40px 0;
+}
+
+.range_screen .designs_wr {
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-gap: 40px;
+    grid-template-areas: 
+        "a b c"
+        "a b c"
+        "a e e"
+        "d e e"
+        "d e e"
+        "d e e"
+        "d g h"
+        "f g h"
+        "f g h"
+        "l l m"
+        "l l m"
+}
+
+.range_screen .design_wr {
+    position: relative;
+    padding-top: 140%;
+}
+
+.range_screen .design_wr.sq {
+    padding-top: 100%;
+}
+
+.range_screen .design_wr.hor {
+    padding-top: 47.5%;
+}
+
+.range_screen .design_wr .design {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.range_screen .design_wr.rings_sets {
+    grid-area: a;
+}
+
+.range_screen .rings_sets .design{
+    background: url(../images/wedding-sets.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.classic {
+    grid-area: b;
+}
+
+.range_screen .classic .design{
+    background: url(../images/classic.jpg)no-repeat center;
+}
+
+.range_screen .design_wr.modern {
+    grid-area: c;
+}
+
+.range_screen .modern .design{
+    background: url(../images/modern.jpg)no-repeat center;
+}
+
+.range_screen .design_wr.vintage {
+    grid-area: d;
+}
+
+.range_screen .vintage .design{
+    background: url(../images/vintage.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.branch {
+    grid-area: e;
+}
+
+.range_screen .branch .design{
+    background: url(../images/branch.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.heavy {
+    grid-area: f;
+}
+
+.range_screen .heavy .design{
+    background: url(../images/heavy.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.bridal_sets {
+    grid-area: g;
+}
+
+.range_screen .bridal_sets .design {
+    background: url(../images/bridal_sets.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.nature_inspired {
+    grid-area: h;
+}
+
+.range_screen .nature_inspired .design{
+    background: url(../images/nature.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.personalised {
+    grid-area: l;
+}
+
+.range_screen .personalised .design{
+    background: url(../images/personalised.jpg) no-repeat center;
+}
+
+.range_screen .design_wr.crown {
+    grid-area: m;
+}
+
+.range_screen .crown .design{
+    background: url(../images/crown.jpg) no-repeat center;
+}
+
+.range_screen .design_wr .design {
+    background-size: cover;
 }
 
 /* instagram_screen */
@@ -415,9 +610,58 @@ footer .copyright {
 }
 
 
+@media screen and (max-width: 1500px) {
+	
+}
+
+@media screen and (max-width: 1366px) {
+    
+}
+
+@media screen and (max-width: 1279px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+    
+    .range_screen .designs_wr {
+        grid-template-columns:  repeat(2, 1fr);
+        grid-gap:20px;
+        grid-template-areas: 
+            "a b"
+            "a b"
+            "a e"
+            "f e"
+            "f e"
+            "d c"
+            "d c"
+            "d g"
+            "l g"
+            "l g"
+            "h m"
+            "h m"
+            "h m"
+    }
+    
+    .range_screen .design_wr.hor {
+        padding-top: 100%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+	
+}
+
+@media screen and (max-width: 767px) {
+		
+}
+
+@media screen and (max-width: 639px) {
+
+
+}
+
 
 /*Coin Slider jQuery plugin CSS styles*/
-
 
 .coin-slider { 
     overflow: hidden; 
