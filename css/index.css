@@ -53,7 +53,7 @@ body{
 }
 
 .wrapper{
-	max-width:1200px;
+	max-width:1230px;
 	margin:0 auto;
 	padding:0 40px;
 }
@@ -76,7 +76,7 @@ a{
 }
 
 a:hover{
-	color:#0054bd;
+    
 }
 
 .flex {
@@ -174,20 +174,16 @@ header .second_line {
     padding: 20px 0;
 }
 
-header .logo {
+.logo {
     display: block;
     background-color: rgb(36, 31, 22);
     width: 100px;
-    height: 100px;
-    margin: 0 auto;
-}
-
-.navbar {
-    margin: 0 auto;
+    height: 85px;
+    margin: 0 auto 20px;
 }
 
 .menu{
-	margin:0;
+	margin:0 auto;
 	padding:0;    
 }
 
@@ -209,17 +205,19 @@ header .logo {
     font-size: 14px;
     font-weight: 300;
     color: rgb(0, 0, 0);
-    padding: 0 10px;
-    letter-spacing: 0.5px
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: 0 17px;
 }
 
-.menu li::after {
+header .menu .with_arrow::after {
     content: "";
     background: url(../images/sprites.svg) no-repeat -144px -26px;
 	width: 10px;
 	height: 10px;
     position: absolute;
     right: 0;
+    top: 8px;
 }
 
 .menu .submenu {
@@ -248,26 +246,230 @@ header .logo {
     text-decoration: none;
 }
 
+/* slider_screen */
+
+.slider_screen {
+    background: #f9f5ef;
+    height: 540px;
+    position: relative;
+    padding-top: 55px;
+}
+
+.slider_screen .background1 {
+    background: url(../images/branches_bg_1.jpg);
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 82%;
+    height: 440px; 
+}
+
+.slider_screen .background2 {
+    background: url(../images/branches_bg_1.jpg);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 58%;
+    height: 440px;
+}
+
+.slider_screen .slider_wr {
+    position: relative;
+}
+
+.transparent {
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.slider_screen h1, .slider_screen h2 {
+    font: 700 60px "Unna";
+    color: rgb(249, 245, 239);
+}
+
+.slider_screen .description {
+    font-size: 18px;
+    color: rgb(249, 245, 239);
+}
+
 .button {
-    border: 2px solid rgb(0, 112, 61);
-    background: none;
-    width: 186px;
-    height: 42px;
-    font-size: 15px;
-    font-weight: 500;
-    color: rgb(0, 112, 61);
-    line-height: 42px;
-    margin: auto 8px auto 18px;
+    display: block;
+    border: 2px solid rgb(249, 245, 239);
+    border-radius: 35px;
+    background: rgba(41, 36, 33, 0);
+    width: 220px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(249, 245, 239);
     text-align: center;
     outline: none;
     box-sizing: border-box;
-	text-decoration:none;
-	cursor:pointer;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.slider_screen .button {
+    position: absolute;
+    left: 75px;
+    bottom: 150px;
+}
+
+/* instagram_screen */
+
+.instagram_screen {
+    background: #f9f5ef;
+    padding: 30px 0;
+}
+
+.instagram_screen .caption {
+    font-size: 24px;
+    color: rgb(36, 31, 22);
+    text-align: center;
+}
+
+.instagram_screen h3 {
+    font-size: 15px;
+    color: rgb(36, 31, 22);
+    text-align: center;
+}
+
+.instagram_screen h3 a {
+    color: #a89f8d;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.instagram_screen .insta_pics {
+    margin: 0 -20px;
+}
+
+.instagram_screen .fancy_wr  {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 20px;
+}
+
+.instagram_screen .fancy_wr img {
+    width: 100%;
 }
 
 /* footer */
 
 footer {
     background-color: #241f16;
+    padding: 40px 0 20px;
 }
+
+footer .logo {
+    background-color: rgb(188, 174, 149);
+}
+
+footer .line {
+    background-color: rgb(188, 174, 149);
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+}
+
+footer .footer_nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+footer .menu a {
+    font-size: 14px;
+    color: rgb(188, 174, 149);
+}
+
+footer .social_icons {
+    margin: 38px auto 17px;
+}
+
+footer .social_icons .icon {
+    background: url(../images/sprites.svg) no-repeat -7px -57px;
+	width: 30px;
+	height: 30px;
+    margin: 0 12px;
+}
+
+footer .social_icons .vk.icon {
+    background-position: -48px -57px;
+}
+
+footer .social_icons .insta.icon {
+    background-position: -86px -57px;
+}
+
+footer .copyright {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgb(188, 174, 149);
+    text-align: center;
+}
+
+
+
+/*Coin Slider jQuery plugin CSS styles*/
+
+
+.coin-slider { 
+    overflow: hidden; 
+    zoom: 1; 
+    position: relative; 
+}
+
+.coin-slider a{ 
+    text-decoration: none; 
+    outline: none; 
+    border: none; 
+}
+
+.coin-slider a img {
+    width: 1200px;
+}
+
+.cs-buttons { 
+    font-size: 0px; 
+    float: left; 
+    position: absolute;
+    bottom: 35px;
+}
+
+.cs-buttons a { 
+    margin: 0 5px; 
+    height: 12px; 
+    width: 12px; 
+    float: left; 
+    border: 2px solid rgb(255, 255, 255); 
+    border-radius: 50%;
+    background-color: rgba(231, 232, 209, 0.6);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    text-indent: -1000px; 
+}
+
+.cs-buttons a.cs-active { 
+    background-color: rgb(255, 255, 255); 
+}
+
+.cs-active { 
+    background-color: rgb(255, 255, 255); 
+    color: #FFFFFF; 
+}
+
+.cs-title { 
+    max-width: 450px;
+}
+
+.cs-prev, 
+.cs-next { 
+    display: none;
+}
+
 

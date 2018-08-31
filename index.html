@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
-    <title>Собаки и кошки в добрые руки</title>
+    <title>Wedding Rings</title>
 </head>
 <body>
     <header>
@@ -33,9 +33,9 @@
         <div class="second_line">
             <div class="wrapper">
                 <a href="/" class="logo"></a>
-                <nav class="navbar">
+                <nav class="navbar flex">
                     <ul class="menu">
-                        <li><a href="#">Wedding</a>
+                        <li class="with_arrow"><a href="#">Wedding</a>
                           <ul class="submenu">
                             <li><a href="#">Rings Sets</a></li>
                             <li><a href="#">Classic</a></li>
@@ -45,16 +45,16 @@
                             <li><a href="#">Bridal Sets</a></li> 
                           </ul>
                         </li>
-                        <li>
+                        <li class="with_arrow">
                           <a href="#">Engagement</a>
                         </li>
-                        <li>
+                        <li class="with_arrow">
                           <a href="#">Tiny & Stackable</a>
                         </li>
                         <li>
                           <a href="#">About</a>
                         </li>
-                        <li>
+                        <li class="with_arrow">
                           <a href="#">FAQ</a>
                         </li>
                         <li>
@@ -65,30 +65,82 @@
             </div>
         </div>
     </header>
+    <section class="slider_screen">
+        <div class="background1"></div>
+        <div class="background2"></div>
+        <div class="wrapper">
+            <div class="slider_wr">
+                <div id='coin-slider'>
+                    <a href="images/slide-1.jpg" target="_blank">
+                        <img src='images/slide-1.jpg' >
+                        <span class="text">
+                            <h1>Wedding Rings</h1>
+                            <div class="description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
+                        </span>
+                    </a>
+                    <a href="images/slide-2.jpg">
+                        <img src='images/slide-2.jpg' >
+                        <span class="text">
+                            <h2>Wedding Rings2</h2>
+                            <div class="description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
+                        </span>
+                    </a>
+                    <a href="images/slide-1.jpg">
+                        <img src='images/slide-1.jpg' >
+                        <span class="text">
+                            <h2>Wedding Rings3</h2>
+                            <div class="description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
+                        </span>
+                    </a>
+                </div>
+                <div class="transparent"></div>
+                <a href="#" class="button">Buy it now</a>
+            </div>
+        </div>
+    </section>
+    <section class="instagram_screen">
+        <div class="wrapper">
+            <div class="caption">Follow our Instagram</div>
+            <h3>Follow <a href="#">@handmade_wedding_rings</a> for jewellery inspiration, styling tips & treats.</h3>
+            <div class="insta_pics flex">
+                <div class="fancy_wr">
+                    <a href="images/classic.jpg" data-fancybox="group" data-caption="" class="lightbox">
+                        <img src="images/classic.jpg" alt="">
+                    </a>
+                </div>
+                <div class="fancy_wr">
+                    <a href="images/classic.jpg" data-fancybox="group" data-caption="" class="lightbox">
+                        <img src="images/classic.jpg" alt="">
+                    </a>
+                </div>
+                <div class="fancy_wr">
+                     <a href="images/classic.jpg" data-fancybox="group" data-caption="" class="lightbox">
+                         <img src="images/classic.jpg" alt="">
+                     </a>
+                </div>
+                <div class="fancy_wr">
+                     <a href="images/classic.jpg" data-fancybox="group" data-caption="" class="lightbox">
+                         <img src="images/classic.jpg" alt="">
+                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
-        <div class="first_line">
-            <div class="wrapper">
-                <a href="/" class="logo"></a>
-                <nav class="navbar">
+        <div class="wrapper">
+            <a href="/" class="logo"></a>
+            <div class="line"></div>
+            <div class="footer_nav">
+                <nav class="navbar flex">
                     <ul class="menu">
-                        <li><a href="#">Wedding</a>
-                          <ul class="submenu">
-                            <li><a href="#">Rings Sets</a></li>
-                            <li><a href="#">Classic</a></li>
-                            <li><a href="#">Modern</a></li> 
-                            <li><a href="#">Vintage</a></li>
-                            <li><a href="#">Heavy</a></li>
-                            <li><a href="#">Bridal Sets</a></li> 
-                          </ul>
+                        <li>
+                          <a href="#">Guarantee</a>
                         </li>
                         <li>
-                          <a href="#">Engagement</a>
+                          <a href="#">Ordering + Shipping</a>
                         </li>
                         <li>
-                          <a href="#">Tiny & Stackable</a>
-                        </li>
-                        <li>
-                          <a href="#">About</a>
+                          <a href="#">Care + Cleaning</a>
                         </li>
                         <li>
                           <a href="#">FAQ</a>
@@ -98,17 +150,18 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="social_icons">
+                <div class="social_icons flex">
                    <a href="#" class="facebook icon"></a>
                    <a href="#" class="vk icon"></a>
                    <a href="#" class="insta icon"></a>
-               </div>
-               <div class="site">© 2018 WRingsStore</div>
-            </div>
+                </div>
+                <div class="copyright">© 2018 WRingsStore</div>
+           </div>
         </div>
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/coin-slider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script src="js/main.js"></script>
 </html>
