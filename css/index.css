@@ -92,7 +92,19 @@ a:hover{
 
 header .first_line {
     background-color: rgb(36, 31, 22);  
-    padding: 10px 0;
+    padding: 5px 0;
+}
+
+header .wrapper {
+    position: relative;
+}
+
+header .mobile_search {
+    display: none;
+    background: url(../images/sprites.svg) no-repeat -8px -9px;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
 }
 
 header .wpcf7-form-control-wrap {
@@ -106,7 +118,7 @@ header .wpcf7-form-control {
     background-color: rgb(36, 31, 22);
     border: none;
     height: 30px;
-    width: 100%;
+    width: 300px;
     outline: none;
     padding-left: 40px;
     font-size: 12px;
@@ -116,12 +128,12 @@ header .wpcf7-form-control {
 
 header .wpcf7-form-control-wrap::before {
     content: "";
-    background: url(../images/sprites.svg) no-repeat -10px -10px;
-	width: 26px;
-	height: 26px;
+    background: url(../images/sprites.svg) no-repeat -8px -9px;
+    width: 24px;
+    height: 24px;
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 0px;
+    top: 3px;
 }
 
 header .wpcf7-form-control-wrap::after {
@@ -129,7 +141,7 @@ header .wpcf7-form-control-wrap::after {
     position: absolute;
     left: 0;
     top: 7px;
-    padding-left: 40px;
+    padding-left: 33px;
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
@@ -139,8 +151,29 @@ header .form input:not([type=submit]):focus {
 	border: none;
 }
 
+header .wpcf7.active  {
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 45px;
+    right: 15px;
+    z-index: 1;
+}
+
+header .wpcf7.active input {
+    background: #f9f5ef;
+    width: 100%;
+}
+
+header  .wpcf7.active .wpcf7-form-control-wrap::after {
+    padding-left: 15px;
+    color: rgb(36, 31, 22);
+}
+
 header .select {
     position: relative;
+    margin: auto 5px;
+    cursor: default;
 }
 
 header .select .select_field {
@@ -148,18 +181,18 @@ header .select .select_field {
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
-    padding: 0 10px;
+    padding: 0 20px 0 10px;
     position: relative;
 }
 
 header .select .select_field:before{
     content: "";
-    background: url(../images/sprites.svg) no-repeat -144px -26px;
-	width: 10px;
-	height: 10px;
+    background: url(../images/sprites.svg) no-repeat -179px -25px;
+    width: 10px;
+    height: 8px;
     position: absolute;
-    right: 0;
-    top: 7px;
+    right: 3px;
+    top: 6px;
     -webkit-transition: all 0.5s linear 0s;
     -moz-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
@@ -167,7 +200,7 @@ header .select .select_field:before{
 }
 
 header .select.active .select_field:before {
-    top: 0;
+    top: 5px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -184,8 +217,9 @@ header .select ul {
     list-style: none;
     position: absolute;
     box-sizing: border-box;
-    top: 40px;
+    top: 29px;
     left: 0;
+    z-index: 2;
 }
 
 header .select.active ul {
@@ -197,13 +231,13 @@ header .select ul li {
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
     border-top: 1px solid #f9f5ef;
-    height: 40px;
-    line-height: 40px;
+    height: 39px;
+    line-height: 39px;
     font-size: 12px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 17px;
 	cursor:default;
 }
 
@@ -211,32 +245,43 @@ header .select ul li:hover {
     background-color: #f9f5ef;
 }
 
+header .select ul li.active {
+    display: none;
+}
+
 header .first_line a {
     display: block;
-    margin: 0 15px;
+    margin: auto 0 auto 20px;
 }
 
 header .account {
     text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 0.8px;
 }
 
 header .favorites {
-    background: url(../images/sprites.svg) no-repeat -50px -10px;
-	width: 29px;
-	height: 26px;
+    background: url(../images/sprites.svg) no-repeat -44px -9px;
+    width: 29px;
+    height: 24px;
 }
 
 header .basket {
-    background: url(../images/sprites.svg) no-repeat -94px -10px;
-	width: 24px;
-	height: 26px;
+    background: url(../images/sprites.svg) no-repeat -86px -8px;
+    min-width: 40px;
+    height: 26px;
+    padding: 5px 2px 5px 25px;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: right;
 }
 
 header .second_line {
     background-color: rgb(249, 245, 239);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-    padding: 20px 0;
+    padding: 20px 0 15px;
+    z-index: 1;
+    position: relative;
 }
 
 .logo {
@@ -267,22 +312,21 @@ header .second_line {
 .menu a{
     display: block; 
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 13px;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
-    letter-spacing: 1.3px;
-    padding: 0 17px;
+    letter-spacing: 1px;
+    padding: 0 23px;
 }
 
 header .menu .with_arrow::after {
     content: "";
-    background: url(../images/sprites.svg) no-repeat -144px -26px;
-	width: 10px;
-	height: 10px;
+    background: url(../images/sprites.svg) no-repeat -143px -25px;
+    width: 10px;
+    height: 8px;
     position: absolute;
-    right: 0;
-    top: 8px;
+    right: 9px;
+    top: 5px;
 }
 
 .menu .submenu {
@@ -295,6 +339,7 @@ header .menu .with_arrow::after {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     display: none;
+    z-index: 1001;
 }
 
 .menu li:hover .submenu {
@@ -311,21 +356,33 @@ header .menu .with_arrow::after {
     text-decoration: none;
 }
 
+.mobile_menu {
+    display: none;
+}
+
+.mobile_menu.button {
+    display: none;
+    border: 2px solid rgb(36, 31, 22);
+    color: rgb(36, 31, 22);
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
 /* slider_screen */
 
 .slider_screen {
     background: #f9f5ef;
     height: 540px;
     position: relative;
-    padding-top: 55px;
+    padding-top: 60px;
 }
 
 .slider_screen .background1 {
     background: url(../images/birds_bg.png) rgb(188, 174, 149); 
     position: absolute;
     right: 0;
-    top: 15px;
-    width: 82%;
+    top: 20px;
+    width: 82.5%;
     height: 440px; 
 }
 
@@ -342,16 +399,48 @@ header .menu .with_arrow::after {
     position: relative;
 }
 
-.transparent {
+.slider_screen .dark_background {
+    display: none;
     background: rgba(255,255,255,0.7);
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
 }
 
-.slider_screen h1, .slider_screen h2 {
+.transparent {
+    border: 15px solid rgba(255,255,255,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.transparent:before {
+    content: "";
+    border-top: 15px solid rgba(255,255,255,0.5);
+    border-left: 15px solid rgba(255,255,255,0.5);
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 32%;
+    height: 75%;
+}
+
+.transparent:after {
+    content: "";
+    border-right: 15px solid rgba(255,255,255,0.5);
+    border-bottom: 15px solid rgba(255,255,255,0.5);
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 32%;
+    height: 75%;
+}
+
+h1, h2 {
     font: 700 60px "Unna";
     color: rgb(249, 245, 239);
 }
@@ -359,6 +448,8 @@ header .menu .with_arrow::after {
 .slider_screen .description {
     font-size: 18px;
     color: rgb(249, 245, 239);
+    margin: 18px 0;
+    line-height: 1.7;
 }
 
 .button {
@@ -368,7 +459,7 @@ header .menu .with_arrow::after {
     background: rgba(41, 36, 33, 0);
     width: 220px;
     height: 56px;
-    line-height: 56px;
+    line-height: 53px;
     font-size: 18px;
     font-weight: 700;
     color: rgb(249, 245, 239);
@@ -381,8 +472,8 @@ header .menu .with_arrow::after {
 
 .slider_screen .button {
     position: absolute;
-    left: 75px;
-    bottom: 150px;
+    left: 95px;
+    bottom: 118px;
 }
 
 /* range_screen */
@@ -407,7 +498,7 @@ header .menu .with_arrow::after {
         "f g h"
         "f g h"
         "l l m"
-        "l l m"
+        "l l m";
 }
 
 .range_screen .design_wr {
@@ -429,6 +520,52 @@ header .menu .with_arrow::after {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.caption {
+    font: 700 66px "Unna";
+    color: rgb(249, 245, 239);
+    text-align: center;
+}
+
+.range_screen .caption  {
+    padding: 55px 55px;
+    line-height: 0.9;
+}
+
+.range_screen .design_wr.hor .caption {
+    text-align: left;
+}
+
+.range_screen .design_wr .transparent {
+    -webkit-transition: all 300ms ease-in;
+    -moz-transition: all 300ms ease-in;
+    -ms-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms linear;
+}
+
+.range_screen .ver .transparent:before, .range_screen .ver .transparent:after{
+    width: 58%;
+    height: 40%;
+}
+
+.range_screen .sq .transparent:before, .range_screen .sq .transparent:after{
+    width: 41%;
+    height: 41%;
+}
+
+.range_screen .hor .transparent:before, .range_screen .hor .transparent:after{
+    width: 40%;
+    height: 50%;
+}
+
+.range_screen .design_wr:hover .transparent {
+    border: 0px solid rgba(255,255,255,0.7);
+}
+
+.range_screen .design_wr:hover .transparent::before, .range_screen .design_wr:hover .transparent::after {
+    border: 0px solid rgba(255,255,255,0.7);
 }
 
 .range_screen .design_wr.rings_sets {
@@ -515,14 +652,49 @@ header .menu .with_arrow::after {
     background-size: cover;
 }
 
+/* order_screen */
+
+.order_screen {
+    background: #f9f5ef;
+}
+
+.order_screen .banner {
+    background: url(../images/branches_bg_2.jpg) center;
+    background-size: cover;
+    padding:65px 40px 75px;  
+    text-align: center;
+    position: relative;
+}
+
+.order_screen .banner .individual {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(249, 245, 239);
+    margin: 5px 0 32px;
+}
+
+.order_screen .button {
+    margin: 0 auto;
+    width: 260px;
+}
+
+.order_screen .transparent {
+    border: 15px solid #bcae95;
+}
+
+.order_screen .transparent:before, .order_screen .transparent:after{
+    width: 28%;
+    height: 58%;
+}
+
 /* instagram_screen */
 
 .instagram_screen {
     background: #f9f5ef;
-    padding: 30px 0;
+    padding: 70px 0 50px;
 }
 
-.instagram_screen .caption {
+.instagram_screen .follow {
     font-size: 24px;
     color: rgb(36, 31, 22);
     text-align: center;
@@ -532,6 +704,7 @@ header .menu .with_arrow::after {
     font-size: 15px;
     color: rgb(36, 31, 22);
     text-align: center;
+    margin: 5px 0 25px;
 }
 
 .instagram_screen h3 a {
@@ -540,18 +713,73 @@ header .menu .with_arrow::after {
     font-size: 15px;
 }
 
-.instagram_screen .insta_pics {
+.instagram_screen .carousel{
+    position: relative;
+}
+
+.instagram_screen .carousel .carousel_wr{
+    overflow: hidden;
     margin: 0 -20px;
 }
-
-.instagram_screen .fancy_wr  {
-    box-sizing: border-box;
-    width: 25%;
-    padding: 20px;
+.instagram_screen .carousel .review_wrapper {
+    width: 100%;
+    overflow: hidden;
 }
 
-.instagram_screen .fancy_wr img {
+.instagram_screen .review_container {
     width: 100%;
+}
+
+.instagram_screen .carousel .long{
+	width:1000%;
+	-webkit-transition: all 0.15s linear 0s;
+    -moz-transition: all 0.15s linear 0s;
+    -o-transition: all 0.15s linear 0s;
+    transition: all 0.15s linear 0s;
+}
+
+.instagram_screen .carousel .one_doc{
+    padding: 0 20px;
+    box-sizing: border-box;
+    float: left;
+    width: 2.5%;
+}
+
+.instagram_screen .carousel .one_doc .inner{
+	width: 100%;
+    font-size: 0;
+}
+
+.instagram_screen .carousel .one_doc img{
+	width: 100%;
+}
+
+.instagram_screen .carousel .controls {
+    margin: 28px auto 0;
+    width: 68px;
+    position: relative;
+}
+
+.instagram_screen .carousel .control{
+    background: url('../images/sprites.svg') no-repeat -153px -63px;
+	width: 18px;
+	height: 18px;
+	cursor:pointer;
+}
+
+.instagram_screen .carousel .control.next{
+    background-position: -183px -63px;
+    float: right;
+}
+
+.instagram_screen .carousel .controls::before {
+    content: "";
+    background-color: rgb(148, 137, 117);
+    position: absolute;
+    left: 33px;
+    top: -4px;
+    width: 2px;
+    height: 26px;
 }
 
 /* footer */
@@ -623,6 +851,14 @@ footer .copyright {
         padding: 0 15px;
     }
     
+    .slider_screen h1, h2 {
+        text-align: center;
+    }
+
+    .slider_screen .description {
+        text-align: center;
+    }
+    
     .range_screen .designs_wr {
         grid-template-columns:  repeat(2, 1fr);
         grid-gap:20px;
@@ -639,24 +875,99 @@ footer .copyright {
             "l g"
             "h m"
             "h m"
-            "h m"
+            "h m";
+    }
+    
+    .range_screen .personalised .design {
+        background: url(../images/personalised.jpg) no-repeat right;
     }
     
     .range_screen .design_wr.hor {
         padding-top: 100%;
     }
+    
+    .range_screen .design_wr.hor .caption{
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1023px) {
+    header .navbar {
+        display: none;
+    }
+    
+    .mobile_menu.button {
+        display: block;
+    }
+    
+    .instagram_screen .review_container {
+        width: 133%;
+    }
+    
+    footer .menu li {
+        float: none;
+    }
 	
+    footer .menu li a {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 767px) {
+    
+    header .mobile_search {
+        display: block;
+    }
+    
+    header .wpcf7 {
+        display: none;
+    }
+    
+    .caption {
+        font-size: 50px;
+    }
+    
+    .instagram_screen .review_container {
+        width: 200%;
+    }
+    
+    .instagram_screen .carousel .one_doc {
+        padding: 0 10px;
+    }
 		
 }
 
 @media screen and (max-width: 639px) {
-
+    .range_screen .designs_wr {
+        grid-template-columns: 1fr;
+        grid-gap:20px;
+        grid-template-areas: 
+            "a"
+            "a"
+            "a"
+            "b"
+            "b"
+            "e"
+            "e"
+            "e"
+            "f"
+            "f"
+            "c"
+            "c"
+            "d"
+            "d"
+            "d"
+            "g"
+            "g"
+            "g"
+            "l"
+            "l"
+            "h"
+            "h"
+            "h"
+            "m"
+            "m";
+    }
 
 }
 
@@ -714,6 +1025,14 @@ footer .copyright {
 .cs-prev, 
 .cs-next { 
     display: none;
+}
+
+@media screen and (max-width: 1279px) {
+    .cs-title { 
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
 }
 
 
