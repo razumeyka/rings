@@ -401,7 +401,7 @@ header .menu .with_arrow::after {
 
 .slider_screen .dark_background {
     display: none;
-    background: rgba(255,255,255,0.7);
+    background: rgba(36, 31, 22,0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -851,6 +851,10 @@ footer .copyright {
         padding: 0 15px;
     }
     
+    .slider_screen .dark_background {
+        display: block;
+    }
+    
     .slider_screen h1, h2 {
         text-align: center;
     }
@@ -995,6 +999,7 @@ footer .copyright {
     float: left; 
     position: absolute;
     bottom: 35px;
+    z-index: 1;
 }
 
 .cs-buttons a { 
