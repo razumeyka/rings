@@ -43,9 +43,10 @@
 body{
 	margin:0;
 	padding:0;  
+    background: #f9f5ef;  
 	font-family: 'Helvetica'; 
 	font-weight: 400;
-	font-size: 12px;
+	font-size: 15px;
 	line-height:1.5;
 	color:rgb(0, 0, 0);
 	min-width: 360px;
@@ -72,7 +73,7 @@ button, textarea, input {
 
 a{
     font-size: 12px;
-    color: rgb(249, 245, 239);
+    color: #a89f8d;
 }
 
 a:hover{
@@ -90,6 +91,11 @@ a:hover{
 
 /* header */
 
+header {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
 header .first_line {
     background-color: rgb(36, 31, 22);  
     padding: 5px 0;
@@ -99,26 +105,18 @@ header .wrapper {
     position: relative;
 }
 
-header .mobile_search {
-    display: none;
-    background: url(../images/sprites.svg) no-repeat -8px -9px;
-    width: 24px;
-    height: 24px;
-    margin-top: 4px;
+.search {
+    position: absolute;
+    left: 38px;
 }
 
-header .wpcf7-form-control-wrap {
-    display: block;
-    position: relative;
-}
-
-header .wpcf7-form-control {
+.search input {
     display: block;
     box-sizing: border-box;
     background-color: rgb(36, 31, 22);
     border: none;
     height: 30px;
-    width: 300px;
+    max-width: 300px;
     outline: none;
     padding-left: 40px;
     font-size: 12px;
@@ -126,8 +124,7 @@ header .wpcf7-form-control {
     text-transform: uppercase;
 }
 
-header .wpcf7-form-control-wrap::before {
-    content: "";
+.search .icon {
     background: url(../images/sprites.svg) no-repeat -8px -9px;
     width: 24px;
     height: 24px;
@@ -136,7 +133,7 @@ header .wpcf7-form-control-wrap::before {
     top: 3px;
 }
 
-header .wpcf7-form-control-wrap::after {
+.search::after {
     content: "search";
     position: absolute;
     left: 0;
@@ -147,27 +144,54 @@ header .wpcf7-form-control-wrap::after {
     text-transform: uppercase;
 }
 
-header .form input:not([type=submit]):focus {
+.search input:not([type=submit]):focus {
 	border: none;
 }
 
-header .wpcf7.active  {
-    display: block;
+.search:before{
+    content: '';
+    display: none;
     position: absolute;
-    top: -1px;
-    left: 45px;
+    left: 40px;
+    top: 8px;
+    width: 1px;
+    height: 14px;
+    background: #ffffff;
+    animation: cursor 600ms infinite ease;
+}
+
+.search.active:before{
+    display: inline-block;
+}
+
+.search.active.focus:before{
+    display: none;
+}
+
+@keyframes cursor {
+    50% {
+        background: transparent;
+    }
+}
+
+.search.active  {
     right: 15px;
     z-index: 1;
 }
 
-header .wpcf7.active input {
-    background: #f9f5ef;
+.search.active input {
     width: 100%;
+    max-width: 767px;
 }
 
-header  .wpcf7.active .wpcf7-form-control-wrap::after {
+.search.active::after {
     padding-left: 15px;
     color: rgb(36, 31, 22);
+}
+
+header .header_nav {
+    display: flex;
+    margin: 0 0 0 auto;
 }
 
 header .select {
@@ -181,6 +205,7 @@ header .select .select_field {
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
+    line-height: 30px;
     padding: 0 20px 0 10px;
     position: relative;
 }
@@ -192,7 +217,7 @@ header .select .select_field:before{
     height: 8px;
     position: absolute;
     right: 3px;
-    top: 6px;
+    top: 11px;
     -webkit-transition: all 0.5s linear 0s;
     -moz-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
@@ -200,7 +225,6 @@ header .select .select_field:before{
 }
 
 header .select.active .select_field:before {
-    top: 5px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -217,16 +241,12 @@ header .select ul {
     list-style: none;
     position: absolute;
     box-sizing: border-box;
-    top: 29px;
+    top: 35px;
     left: 0;
     z-index: 2;
 }
 
-header .select.active ul {
-	display:block;
-}
-
-header .select ul li {
+header .select ul li a{
     display: block;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
@@ -236,12 +256,13 @@ header .select ul li {
     font-size: 12px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
+    text-decoration: none;
     text-align: center;
     padding: 0 17px;
 	cursor:default;
 }
 
-header .select ul li:hover {
+header .select ul li a:hover {
     background-color: #f9f5ef;
 }
 
@@ -249,38 +270,34 @@ header .select ul li.active {
     display: none;
 }
 
-header .first_line a {
+header .first_line .user {
     display: block;
-    margin: auto 0 auto 20px;
-}
-
-header .account {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.8px;
+    color: rgb(249, 245, 239);
+    margin: auto 0 auto 20px;
+    line-height: 30px;
 }
 
 header .favorites {
-    background: url(../images/sprites.svg) no-repeat -44px -9px;
+    background: url(../images/sprites.svg) no-repeat -45px -5px;
     width: 29px;
-    height: 24px;
+    height: 30px;
 }
 
-header .basket {
-    background: url(../images/sprites.svg) no-repeat -86px -8px;
-    min-width: 40px;
-    height: 26px;
-    padding: 5px 2px 5px 25px;
+header .cart {
+    background: url(../images/sprites.svg) no-repeat -86px -5px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 32px;
     text-decoration: none;
     box-sizing: border-box;
-    text-align: right;
 }
 
 header .second_line {
     background-color: rgb(249, 245, 239);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     padding: 20px 0 15px;
-    z-index: 1;
     position: relative;
 }
 
@@ -319,7 +336,7 @@ header .second_line {
     padding: 0 23px;
 }
 
-header .menu .with_arrow::after {
+header .menu .with_submenu::after {
     content: "";
     background: url(../images/sprites.svg) no-repeat -143px -25px;
     width: 10px;
@@ -366,12 +383,13 @@ header .menu .with_arrow::after {
     color: rgb(36, 31, 22);
     text-transform: uppercase;
     margin: 0 auto;
+    max-width: 258px;
+    padding: 0 20px;
 }
 
 /* slider_screen */
 
 .slider_screen {
-    background: #f9f5ef;
     height: 540px;
     position: relative;
     padding-top: 60px;
@@ -382,7 +400,7 @@ header .menu .with_arrow::after {
     position: absolute;
     right: 0;
     top: 20px;
-    width: 82.5%;
+    width: calc((100% + 870px)/2);   
     height: 440px; 
 }
 
@@ -391,7 +409,7 @@ header .menu .with_arrow::after {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 58%;
+    width: calc((100% + 220px)/2);   
     height: 440px;
 }
 
@@ -409,8 +427,9 @@ header .menu .with_arrow::after {
     right: 0;
 }
 
-.transparent {
-    border: 15px solid rgba(255,255,255,0.7);
+.image_frames {
+    border: 15px solid rgba(255,255,255,0.3);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
     left: 0;
@@ -418,7 +437,7 @@ header .menu .with_arrow::after {
     right: 0;
 }
 
-.transparent:before {
+.image_frames:before {
     content: "";
     border-top: 15px solid rgba(255,255,255,0.5);
     border-left: 15px solid rgba(255,255,255,0.5);
@@ -429,7 +448,7 @@ header .menu .with_arrow::after {
     height: 75%;
 }
 
-.transparent:after {
+.image_frames:after {
     content: "";
     border-right: 15px solid rgba(255,255,255,0.5);
     border-bottom: 15px solid rgba(255,255,255,0.5);
@@ -440,12 +459,12 @@ header .menu .with_arrow::after {
     height: 75%;
 }
 
-h1, h2 {
+.slider_screen h1, h2 {
     font: 700 60px "Unna";
     color: rgb(249, 245, 239);
 }
 
-.slider_screen .description {
+.slider_screen .slide_description {
     font-size: 18px;
     color: rgb(249, 245, 239);
     margin: 18px 0;
@@ -457,13 +476,13 @@ h1, h2 {
     border: 2px solid rgb(249, 245, 239);
     border-radius: 35px;
     background: rgba(41, 36, 33, 0);
-    width: 220px;
     height: 56px;
     line-height: 53px;
     font-size: 18px;
     font-weight: 700;
     color: rgb(249, 245, 239);
     text-align: center;
+    padding: 0 62px;
     outline: none;
     box-sizing: border-box;
     text-decoration:none;
@@ -479,11 +498,10 @@ h1, h2 {
 /* range_screen */
 
 .range_screen {
-    background: #f9f5ef;
     padding: 40px 0;
 }
 
-.range_screen .designs_wr {
+.range_screen .plates_wr {
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
     grid-gap: 40px;
@@ -501,20 +519,20 @@ h1, h2 {
         "l l m";
 }
 
-.range_screen .design_wr {
+.range_screen .plate_wr {
     position: relative;
     padding-top: 140%;
 }
 
-.range_screen .design_wr.sq {
+.range_screen .plate_wr.sq {
     padding-top: 100%;
 }
 
-.range_screen .design_wr.hor {
+.range_screen .plate_wr.hor {
     padding-top: 47.5%;
 }
 
-.range_screen .design_wr .design {
+.range_screen .plate_wr .plate {
     position: absolute;
 	top: 0;
 	left: 0;
@@ -533,11 +551,11 @@ h1, h2 {
     line-height: 0.9;
 }
 
-.range_screen .design_wr.hor .caption {
+.range_screen .plate_wr.hor .caption {
     text-align: left;
 }
 
-.range_screen .design_wr .transparent {
+.range_screen .plate_wr .image_frames {
     -webkit-transition: all 300ms ease-in;
     -moz-transition: all 300ms ease-in;
     -ms-transition: all 300ms ease-in;
@@ -545,128 +563,123 @@ h1, h2 {
     transition: all 300ms linear;
 }
 
-.range_screen .ver .transparent:before, .range_screen .ver .transparent:after{
+.range_screen .ver .image_frames:before, .range_screen .ver .image_frames:after{
     width: 58%;
     height: 40%;
 }
 
-.range_screen .sq .transparent:before, .range_screen .sq .transparent:after{
+.range_screen .sq .image_frames:before, .range_screen .sq .image_frames:after{
     width: 41%;
     height: 41%;
 }
 
-.range_screen .hor .transparent:before, .range_screen .hor .transparent:after{
+.range_screen .hor .image_frames:before, .range_screen .hor .image_frames:after{
     width: 40%;
     height: 50%;
 }
 
-.range_screen .design_wr:hover .transparent {
+.range_screen .plate_wr:hover .image_frames {
     border: 0px solid rgba(255,255,255,0.7);
 }
 
-.range_screen .design_wr:hover .transparent::before, .range_screen .design_wr:hover .transparent::after {
+.range_screen .plate_wr:hover .image_frames::before, .range_screen .plate_wr:hover .image_frames::after {
     border: 0px solid rgba(255,255,255,0.7);
 }
 
-.range_screen .design_wr.rings_sets {
+.range_screen .plate_wr.rings_sets {
     grid-area: a;
 }
 
-.range_screen .rings_sets .design{
+.range_screen .rings_sets .plate{
     background: url(../images/wedding-sets.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.classic {
+.range_screen .plate_wr.classic {
     grid-area: b;
 }
 
-.range_screen .classic .design{
+.range_screen .classic .plate{
     background: url(../images/classic.jpg)no-repeat center;
 }
 
-.range_screen .design_wr.modern {
+.range_screen .plate_wr.modern {
     grid-area: c;
 }
 
-.range_screen .modern .design{
+.range_screen .modern .plate{
     background: url(../images/modern.jpg)no-repeat center;
 }
 
-.range_screen .design_wr.vintage {
+.range_screen .plate_wr.vintage {
     grid-area: d;
 }
 
-.range_screen .vintage .design{
+.range_screen .vintage .plate{
     background: url(../images/vintage.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.branch {
+.range_screen .plate_wr.branch {
     grid-area: e;
 }
 
-.range_screen .branch .design{
+.range_screen .branch .plate{
     background: url(../images/branch.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.heavy {
+.range_screen .plate_wr.heavy {
     grid-area: f;
 }
 
-.range_screen .heavy .design{
+.range_screen .heavy .plate{
     background: url(../images/heavy.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.bridal_sets {
+.range_screen .plate_wr.bridal_sets {
     grid-area: g;
 }
 
-.range_screen .bridal_sets .design {
+.range_screen .bridal_sets .plate {
     background: url(../images/bridal_sets.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.nature_inspired {
+.range_screen .plate_wr.nature_inspired {
     grid-area: h;
 }
 
-.range_screen .nature_inspired .design{
+.range_screen .nature_inspired .plate{
     background: url(../images/nature.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.personalised {
+.range_screen .plate_wr.personalised {
     grid-area: l;
 }
 
-.range_screen .personalised .design{
+.range_screen .personalised .plate{
     background: url(../images/personalised.jpg) no-repeat center;
 }
 
-.range_screen .design_wr.crown {
+.range_screen .plate_wr.crown {
     grid-area: m;
 }
 
-.range_screen .crown .design{
+.range_screen .crown .plate{
     background: url(../images/crown.jpg) no-repeat center;
 }
 
-.range_screen .design_wr .design {
+.range_screen .plate_wr .plate {
     background-size: cover;
 }
 
 /* order_screen */
 
-.order_screen {
-    background: #f9f5ef;
-}
-
 .order_screen .banner {
     background: url(../images/branches_bg_2.jpg) center;
-    background-size: cover;
     padding:65px 40px 75px;  
     text-align: center;
     position: relative;
 }
 
-.order_screen .banner .individual {
+.order_screen .banner .description {
     font-size: 20px;
     font-weight: 300;
     color: rgb(249, 245, 239);
@@ -675,14 +688,17 @@ h1, h2 {
 
 .order_screen .button {
     margin: 0 auto;
-    width: 260px;
+    position: relative;
+    z-index: 1;
+    max-width: 258px;
+    padding: 0 20px;
 }
 
-.order_screen .transparent {
+.order_screen .image_frames {
     border: 15px solid #bcae95;
 }
 
-.order_screen .transparent:before, .order_screen .transparent:after{
+.order_screen .image_frames:before, .order_screen .image_frames:after{
     width: 28%;
     height: 58%;
 }
@@ -690,24 +706,23 @@ h1, h2 {
 /* instagram_screen */
 
 .instagram_screen {
-    background: #f9f5ef;
     padding: 70px 0 50px;
 }
 
-.instagram_screen .follow {
+.instagram_screen .small_caption {
     font-size: 24px;
     color: rgb(36, 31, 22);
     text-align: center;
 }
 
-.instagram_screen h3 {
+.instagram_screen .insta_link {
     font-size: 15px;
     color: rgb(36, 31, 22);
     text-align: center;
     margin: 5px 0 25px;
 }
 
-.instagram_screen h3 a {
+.instagram_screen .insta_link a {
     color: #a89f8d;
     text-decoration: none;
     font-size: 15px;
@@ -776,7 +791,9 @@ h1, h2 {
     content: "";
     background-color: rgb(148, 137, 117);
     position: absolute;
-    left: 33px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     top: -4px;
     width: 2px;
     height: 26px;
@@ -809,6 +826,7 @@ footer .footer_nav {
 footer .menu a {
     font-size: 14px;
     color: rgb(188, 174, 149);
+    padding: 0 17px;
 }
 
 footer .social_icons {
@@ -823,11 +841,11 @@ footer .social_icons .icon {
 }
 
 footer .social_icons .vk.icon {
-    background-position: -48px -57px;
+    background-position: -45px -57px;
 }
 
 footer .social_icons .insta.icon {
-    background-position: -86px -57px;
+    background-position: -82px -57px;
 }
 
 footer .copyright {
@@ -851,6 +869,10 @@ footer .copyright {
         padding: 0 15px;
     }
     
+    .search {
+        left: 15px;
+    }
+    
     .slider_screen .dark_background {
         display: block;
     }
@@ -859,11 +881,11 @@ footer .copyright {
         text-align: center;
     }
 
-    .slider_screen .description {
+    .slider_screen .slide_description {
         text-align: center;
     }
     
-    .range_screen .designs_wr {
+    .range_screen .plates_wr {
         grid-template-columns:  repeat(2, 1fr);
         grid-gap:20px;
         grid-template-areas: 
@@ -882,15 +904,15 @@ footer .copyright {
             "h m";
     }
     
-    .range_screen .personalised .design {
+    .range_screen .personalised .plate {
         background: url(../images/personalised.jpg) no-repeat right;
     }
     
-    .range_screen .design_wr.hor {
+    .range_screen .plate_wr.hor {
         padding-top: 100%;
     }
     
-    .range_screen .design_wr.hor .caption{
+    .range_screen .plate_wr.hor .caption{
         text-align: center;
     }
 }
@@ -919,11 +941,11 @@ footer .copyright {
 
 @media screen and (max-width: 767px) {
     
-    header .mobile_search {
-        display: block;
+    .search input {
+        max-width: 40px;
     }
     
-    header .wpcf7 {
+    .search:after {
         display: none;
     }
     
@@ -935,6 +957,10 @@ footer .copyright {
         width: 200%;
     }
     
+    instagram_screen .carousel .carousel_wr {
+        margin: 0 -10px;
+    }
+    
     .instagram_screen .carousel .one_doc {
         padding: 0 10px;
     }
@@ -942,7 +968,7 @@ footer .copyright {
 }
 
 @media screen and (max-width: 639px) {
-    .range_screen .designs_wr {
+    .range_screen .plates_wr {
         grid-template-columns: 1fr;
         grid-gap:20px;
         grid-template-areas: 
@@ -1024,7 +1050,11 @@ footer .copyright {
 }
 
 .cs-title { 
+    position: absolute; 
+    top:108px; 
+    left: 95px; 
     max-width: 450px;
+    z-index: 1000;
 }
 
 .cs-prev, 
