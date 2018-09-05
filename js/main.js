@@ -24,14 +24,14 @@ $(document).ready(function(){
 
 // submenu
     
-    $('.menu li').click(function(e){
-        if($(this).hasClass('active')){return;}
-        e.preventDefault();
-        $('.submenu').slideUp('300');
-        $('.menu li').removeClass('active');
-        $(this).addClass('active');
-        $(this).find('.submenu').slideToggle('300');
-    }); 
+    $('.menu li').mouseover(function () {
+        $(".submenu_background").toggleClass('active');
+    });
+
+   	$('.menu li' ).click(function(){
+        $(this).find('.submenu').slideToggle(500);
+        $(".submenu_background").slideToggle(500);
+    });		
     
 // slider  
 
