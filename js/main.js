@@ -24,14 +24,27 @@ $(document).ready(function(){
 
 // submenu
     
-    $('.menu li').mouseover(function () {
-        $(".submenu_background").toggleClass('active');
-    });
+//    $('.menu li').mouseover(function () {
+//        $(".submenu_background").toggleClass('active');
+//    });
 
    	$('.menu li' ).click(function(){
         $(this).find('.submenu').slideToggle(500);
         $(".submenu_background").slideToggle(500);
-    });		
+    });	
+    
+// fixed menu  
+    
+        if ( $(window).width() > 1279 ) {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 1){  
+                    $('header').addClass("fixed");
+                }
+                else {
+                    $('header').removeClass("fixed");
+                }
+            });
+        }
     
 // slider  
 
