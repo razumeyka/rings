@@ -30,7 +30,7 @@ $(document).ready(function(){
 
    	$('.menu li' ).click(function(){
         $(this).find('.submenu').slideToggle(500);
-        $(".submenu_background").slideToggle(500);
+//        $(".submenu_background").slideToggle(500);
     });	
     
 // fixed menu  
