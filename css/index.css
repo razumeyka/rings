@@ -388,7 +388,7 @@ header .menu .with_submenu::after {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 50px;
+    top: 30px;
     left: 0;
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -543,9 +543,12 @@ header .menu .with_submenu::after {
 }
 
 .range_screen .plates_wr {
+    display: -ms-grid;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
+    -ms-grid-columns:  1fr 40px 1fr 40px 1fr;
     grid-gap: 40px;
+    -ms-grid-rows: auto 40px auto 40px auto 40px auto 40px auto 40px auto 40px auto 40px auto 40px auto 40px auto 40px auto;
     grid-template-areas: 
         "a b c"
         "a b c"
@@ -598,9 +601,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr .image_frames {
     -webkit-transition: all 300ms ease-in;
-    -moz-transition: all 300ms ease-in;
-    -ms-transition: all 300ms ease-in;
     -o-transition: all 300ms ease-in;
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
     transition: all 300ms linear;
 }
 
@@ -629,6 +632,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.rings_sets {
     grid-area: a;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
 }
 
 .range_screen .rings_sets .plate{
@@ -637,6 +643,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.classic {
     grid-area: b;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
 }
 
 .range_screen .classic .plate{
@@ -645,6 +654,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.modern {
     grid-area: c;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 5;
 }
 
 .range_screen .modern .plate{
@@ -653,6 +665,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.vintage {
     grid-area: d;
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 7;
+    -ms-grid-column: 1;
 }
 
 .range_screen .vintage .plate{
@@ -660,7 +675,11 @@ header .menu .with_submenu::after {
 }
 
 .range_screen .plate_wr.branch {
-    grid-area: e;
+     grid-area: e;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 7;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
 }
 
 .range_screen .branch .plate{
@@ -669,6 +688,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.heavy {
     grid-area: f;
+    -ms-grid-row: 15;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
 }
 
 .range_screen .heavy .plate{
@@ -677,6 +699,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.bridal_sets {
     grid-area: g;
+    -ms-grid-row: 13;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 3;
 }
 
 .range_screen .bridal_sets .plate {
@@ -685,6 +710,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.nature_inspired {
     grid-area: h;
+    -ms-grid-row: 13;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 5;
 }
 
 .range_screen .nature_inspired .plate{
@@ -693,6 +721,10 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.personalised {
     grid-area: l;
+    -ms-grid-row: 19;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
 }
 
 .range_screen .personalised .plate{
@@ -701,6 +733,9 @@ header .menu .with_submenu::after {
 
 .range_screen .plate_wr.crown {
     grid-area: m;
+    -ms-grid-row: 19;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 5;
 }
 
 .range_screen .crown .plate{
@@ -927,9 +962,11 @@ footer .copyright {
     }
     
     .range_screen .plates_wr {
+        -ms-grid-columns:  1fr 20px 1fr;
         grid-template-columns:  repeat(2, 1fr);
         grid-gap:20px;
-        grid-template-areas: 
+        -ms-grid-rows:  auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto;
+            grid-template-areas: 
             "a b"
             "a b"
             "a e"
@@ -1018,14 +1055,15 @@ footer .copyright {
     
     .instagram_screen .carousel .one_doc {
         padding: 0 10px;
-    }
-		
+    }		
 }
 
 @media screen and (max-width: 639px) {
     .range_screen .plates_wr {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         grid-gap:20px;
+        -ms-grid-rows: auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto;
         grid-template-areas: 
             "a"
             "a"
@@ -1053,7 +1091,6 @@ footer .copyright {
             "m"
             "m";
     }
-
 }
 
 

@@ -73,9 +73,6 @@ $(document).ready(function(){
 		$(this).closest('.carousel').data('slide',slide);
     });
 
-// fancybox
-    
-    $('.fancybox').fancybox();
 });
 
 
