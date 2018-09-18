@@ -29,22 +29,22 @@ $(document).ready(function(){
 //    });
 
    	$('.menu li' ).click(function(){
-        $(this).find('.submenu').slideToggle(500);
+        $(this).find('.submenu').slideToggle(300);
 //        $(".submenu_background").slideToggle(500);
     });	
     
 // fixed menu  
     
-        if ( $(window).width() > 1279 ) {
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 1){  
-                    $('header').addClass("fixed");
-                }
-                else {
-                    $('header').removeClass("fixed");
-                }
-            });
-        }
+    if ( $(window).width() > 1279 ) {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){  
+                $('header').addClass("fixed");
+            }
+            else {
+                $('header').removeClass("fixed");
+            }
+        });
+    }
     
 // slider  
 
