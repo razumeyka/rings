@@ -373,11 +373,16 @@ header .menu .with_submenu::after {
     position: absolute;
     left: 0;
     right: 0;
-    top: 199px;
-    height: 200px;
+    top: 230px;
+    height: 250px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     z-index: 1001;
+}
+
+.submenu_background.fixed {
+    position: fixed;
+    top: 150px;
 }
 
 .submenu_background.active {
@@ -388,7 +393,7 @@ header .menu .with_submenu::after {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 30px;
+    top: 59px;
     left: 0;
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -400,10 +405,6 @@ header .menu .with_submenu::after {
     display: block;
 }
 
-.menu li:hover ..submenu_background {
-    display: block;
-}
-
 .menu .submenu li {
     position: relative;
     transition: all .2s linear 0s;
@@ -412,6 +413,9 @@ header .menu .with_submenu::after {
 .menu .submenu li a {
     position: relative;
     text-decoration: none;
+    font-size: 15px;
+    text-transform: none;
+    padding: 7px 0 7px 23px;
 }
 
 .mobile_menu {
@@ -980,10 +984,6 @@ footer .copyright {
             "h m"
             "h m"
             "h m";
-    }
-    
-    .range_screen .personalised .plate {
-        background: url(../images/personalised.jpg) no-repeat right;
     }
     
     .range_screen .plate_wr.hor {

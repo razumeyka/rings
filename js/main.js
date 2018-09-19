@@ -24,14 +24,14 @@ $(document).ready(function(){
 
 // submenu
     
-//    $('.menu li').mouseover(function () {
-//        $(".submenu_background").toggleClass('active');
-//    });
+//      $('.menu li').mouseover(function () {
+//       $(".submenu_background").toggleClass('active');
+//      });
 
-   	$('.menu li' ).click(function(){
-        $(this).find('.submenu').slideToggle(300);
-//        $(".submenu_background").slideToggle(500);
-    });	
+//   	$('.menu li' ).click(function(){
+//        $(this).find('.submenu').slideToggle(300);
+//        $(".submenu_background").slideToggle(300);
+//    });	
     
 // fixed menu  
     
@@ -39,9 +39,11 @@ $(document).ready(function(){
         $(window).scroll(function() {
             if ($(this).scrollTop() > 1){  
                 $('header').addClass("fixed");
+                $(".submenu_background").addClass('fixed');
             }
             else {
                 $('header').removeClass("fixed");
+                 $(".submenu_background").removeClass('fixed');
             }
         });
     }
