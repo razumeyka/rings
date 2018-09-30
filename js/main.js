@@ -2,11 +2,9 @@ $(document).ready(function(){
 
 //search
     
-    $('.search .icon').click( function() { 
-        $('.search').toggleClass('active');
-        $('.search .input').focus( function() {
-            $('.search').addClass('focus');
-        });
+    $('.search').click( function() { 
+        $('.search').addClass('active');
+        $('.search input').focus();
     });
     
 //currency_select

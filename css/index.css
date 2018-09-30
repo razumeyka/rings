@@ -95,9 +95,6 @@ header {
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     z-index: 1002;
-}
-
-header.fixed {
     position: fixed;
     right: 0;
     left: 0;
@@ -106,7 +103,6 @@ header.fixed {
 
 header .first_line {
     background-color: rgb(36, 31, 22);  
-    padding: 5px 0;
 }
 
 header .wrapper {
@@ -116,6 +112,8 @@ header .wrapper {
 .search {
     position: absolute;
     left: 38px;
+    height: 36px;
+    pointer-events: none;
 }
 
 .search input {
@@ -123,13 +121,14 @@ header .wrapper {
     box-sizing: border-box;
     background-color: rgb(36, 31, 22);
     border: none;
-    height: 30px;
+    height: 100%;
     max-width: 300px;
     outline: none;
     padding-left: 40px;
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
+    pointer-events: all;
 }
 
 .search .icon {
@@ -138,67 +137,37 @@ header .wrapper {
     height: 24px;
     position: absolute;
     left: 0px;
-    top: 3px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    pointer-events: all;
 }
 
 .search::after {
     content: "search";
     position: absolute;
-    left: 0;
-    top: 7px;
-    padding-left: 33px;
+    height: fit-content;
+    left: 33px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
+    pointer-events: all;
 }
 
 .search input:not([type=submit]):focus {
 	border: none;
 }
 
-.search:before{
-    content: '';
-    display: none;
-    position: absolute;
-    left: 40px;
-    top: 8px;
-    width: 1px;
-    height: 14px;
-    background: #ffffff;
-    animation: cursor 600ms infinite ease;
-}
-
-.search.active:before{
-    display: inline-block;
-}
-
-.search.active.focus:before{
-    display: none;
-}
-
-@keyframes cursor {
-    50% {
-        background: transparent;
-    }
-}
-
-.search.active  {
-    right: 15px;
-    z-index: 1;
-}
-
-.search.active input {
-    width: 100%;
-    max-width: 767px;
-}
-
 .search.active::after {
-    padding-left: 15px;
-    color: rgb(36, 31, 22);
+    display: none;
 }
 
 header .header_nav {
     display: flex;
+    height: 36px;
     margin: 0 0 0 auto;
 }
 
@@ -216,6 +185,7 @@ header .select .select_field {
     line-height: 30px;
     padding: 0 20px 0 10px;
     position: relative;
+    cursor: pointer;
 }
 
 header .select .select_field:before{
@@ -249,7 +219,7 @@ header .select ul {
     list-style: none;
     position: absolute;
     box-sizing: border-box;
-    top: 35px;
+    top: 33px;
     left: 0;
     z-index: 2;
 }
@@ -267,7 +237,7 @@ header .select ul li a{
     text-decoration: none;
     text-align: center;
     padding: 0 17px;
-	cursor:default;
+	cursor: pointer;
 }
 
 header .select ul li a:hover {
@@ -278,7 +248,7 @@ header .select ul li.active {
     display: none;
 }
 
-header .first_line .user {
+header .header_nav>a {
     display: block;
     text-transform: uppercase;
     text-decoration: none;
@@ -364,8 +334,8 @@ header .menu .with_submenu::after {
     width: 10px;
     height: 8px;
     position: absolute;
-    right: 9px;
-    top: 5px;
+    right: 8px;
+    top: 6px;
 }
 
 .submenu_background {
@@ -393,7 +363,7 @@ header .menu .with_submenu::after {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 59px;
+    top: 35px;
     left: 0;
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -437,14 +407,14 @@ header .menu .with_submenu::after {
 .slider_screen {
     height: 540px;
     position: relative;
-    padding-top: 60px;
+    padding-top: 290px;
 }
 
 .slider_screen .background1 {
     background: url(../images/birds_bg.png) rgb(188, 174, 149); 
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 250px;
     width: calc((100% + 870px)/2);   
     height: 440px; 
 }
@@ -949,8 +919,12 @@ footer .copyright {
         padding: 0 15px;
     }
     
+    header {
+        position: absolute;
+    }
+    
     .search {
-        left: 15px;
+        left: 13px;
     }
     
     .slider_screen .dark_background {
@@ -1037,18 +1011,32 @@ footer .copyright {
 
 @media screen and (max-width: 767px) {
     
+    .search.active  {
+        right: 15px;
+        z-index: 1;
+    }    
+    
     .search input {
         max-width: 40px;
+    }
+    
+    .search.active input {
+        width: 100%;
+        max-width: none;
     }
     
     .search:after {
         display: none;
     }
-    
+
     .caption {
         font-size: 50px;
     }
     
+    .instagram_screen .carousel .carousel_wr {
+        margin: 0 -10px;
+    }  
+
     .instagram_screen .review_container {
         width: 200%;
     }
