@@ -1075,54 +1075,71 @@ footer .copyright {
 }
 
 /* card page */
-/* inner page */
 
-.card_details_name {
+.card {
+    padding: 30px 0;
+}
+
+.card__photos {
+    width: 650px;
+}
+
+.card__details {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.card__name {
     font: 700 40px "Unna";
     color: rgb(36, 31, 22);
 }
 
-.card_details_description {
-    font: 500 14px; "HelveticaNeueCyr";
+.card__description {
+    font: 500 14px "Helvetica";
     color: rgb(148, 137, 117);
     font-style: italic;
+    margin: 10px 0 20px;
 }
 
-.card_details_shipping a {
+.card__shipping a {
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 10px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 2px 12px;
     margin-right: 10px;
 }
 
-.card_details_shipping_free {
+.card__shipping_free {
     background-color: rgb(218, 202, 172);
 }
 
-.card_details_shipping_express {
+.card__shipping_express {
     background-color: rgb(205, 223, 175);
 }
 
-.card_details_price {
-    font: 300 26px "HelveticaNeueCyr";
+.card__price {
+    font: 300 26px "Helvetica";
     color: rgb(36, 31, 22);
+    margin: 25px 0 8px;
 }
 
-.card_details_options_name {
+.card__select-column {
+    display: list-item;
+    padding: 0;
+    list-style: none;
+}
+
+.card__label {
     font-size: 10px;
     color: rgb(148, 137, 117);
     text-transform: uppercase;
 }
 
-.card_details_options_select {
+.card__select {
     position: relative;
-}
-
-.card_details_options_select .select_field {
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
@@ -1130,6 +1147,7 @@ footer .copyright {
     height: 42px;
     line-height: 42px;
     padding: 0 10px;
+    margin-right: 20px;
     font-size: 11px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
@@ -1186,7 +1204,7 @@ footer .copyright {
 	cursor:default;
 }
 
-.card_details_cart_button {
+.card__cart_button {
     background: rgb(36, 31, 22);
     border: none;
     border-radius: unset;
@@ -1197,11 +1215,44 @@ footer .copyright {
     color: rgb(249, 245, 239);
     text-transform: uppercase;
     text-align: center;
+    margin: 25px 0 30px;
 }
 
-.card_details_info {
+.card__info {
     font: 400 18px "Unna";
     color: rgb(36, 31, 22);
+}
+
+.card__question {
+    position: relative;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(214, 207, 196);
+    padding: 15px 0 15px 40px;
+}
+
+.card__question::last-child {
+    border-bottom: 1px solid rgb(214, 207, 196);
+}
+
+.card__question::before {
+    background: url('../images/sprites.svg') no-repeat -107px -111px;
+	width: 14px;
+	height: 13px;
+    position: absolute;
+    left: 0;
+}
+
+.card__info.card__info_active .card__question:before {
+    background-position: -134px -116px;
+}
+
+.card__answer {
+    border-top: 1px solid rgb(214, 207, 196);
+    padding: 15px 0 15px 40px;
+}
+
+.card__social {
+    margin-top: 25px;
 }
 
 

@@ -84,7 +84,15 @@ $(document).ready(function(){
 		$(this).closest('.card_details_options_select').find('input').val($(this).data('value'));
 		$(this).closest('.card_details_options_select').find('.select_field').html($(this).html());
 		$(this).closest('.card_details_options_select').toggleClass('active');
-	})
+	});
+    
+// question-answer
+    
+    $(".card__answer").hide();
+    $('.card__question').click(function(){
+            $(this).next().slideToggle(500);
+            $(this).toggleClass('card__info_active');
+    });
 
 });
 

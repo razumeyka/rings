@@ -97,7 +97,7 @@
             </div>
         </div>
     </header>
-    <div class="inner_page">
+    <div class="inner-page">
         <div class="wrapper">
             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -107,76 +107,90 @@
                     <meta itemprop="position" content="1" />
                 </li>
                 <li class="arrow"><span>></span></li>
-                <li class="unactive"><span></span>Engagement rings Branches  >  Tiny twig «Fiona»</li>
+                <li class="unactive"><span></span>Engagement rings</li>
                 <li class="arrow"><span>></span></li>
                 <li class="unactive"><span></span>Branches</li>
                 <li class="arrow"><span>></span></li>
                 <li class="unactive"><span></span>Tiny twig «Fiona»</li>
             </ol>
             <div class="card flex">
-                <div class="card_photos"></div>
-                <div class="card_details">
-                    <div class="card_details_name">Tiny twig "Fiona"</div>
-                    <div class="card_details_description">Tiny twig engagement ring with Amethyst and Diamonds in Yellow gold</div>
-                    <div class="card_details_shipping flex">
-                        <a href="#" class="card_details_shipping_free">Free shipping</a>
-                        <a href="#" class="card_details_shipping_express">Express shipping</a>
+                <div class="card__photos"></div>
+                <div class="card__details">
+                    <div class="card__name">Tiny twig "Fiona"</div>
+                    <div class="card__description">Tiny twig engagement ring with Amethyst and Diamonds in Yellow gold</div>
+                    <div class="card__shipping flex">
+                        <a href="#" class="card__shipping_free">Free shipping</a>
+                        <a href="#" class="card__shipping_express">Express shipping</a>
                     </div>
-                    <div class="card_details_price">$943.00</div>
-                    <div class="card_details_options flex">
-                        <div class="card_details_options_wr">
-                            <div class="card_details_options_name">size</div>
-                            <div class="card_details_options_select">
-                               <input type="hidden" name="size" value="size">
-                               <div class="select_field">
-                                   <div class="field">Choose option</div>
-                               </div>
-                               <ul>
-                                   <li class="field">маленький</li>
-                                   <li class="field">большой</li>
-                               </ul>
-                            </div>
-                        </div>
-                        <div class="card_details_options_wr">
-                            <div class="card_details_options_name">material</div>
-                            <div class="card_details_options_select">
-                               <input type="hidden" name="material" value="material">
-                               <div class="select_field">
-                                   <div class="field">Choose option</div>
-                               </div>
-                               <ul>
-                                   <li class="field">золото</li>
-                                   <li class="field">серебро</li>
-                               </ul>
-                            </div>
-                        </div>
-                        <div class="card_details_options_wr">
-                            <div class="card_details_options_name">stone</div>
-                            <div class="card_details_options_select">
-                               <input type="hidden" name="stone" value="stone">
-                               <div class="select_field">
-                                   <div class="field">Choose option</div>
-                               </div>
-                               <ul>
-                                   <li class="field">лунный камень</li>
-                                   <li class="field">синий камень</li>
-                               </ul>
-                            </div>
-                        </div>
+                    <p class="card__price">
+                        <span>
+                            <span>$</span>
+                            943.00
+                        </span>
+                    </p>
+                    <table>
+                        <tbody class="flex">
+                            <tr>
+                                <td class="card__select-column">
+                                    <label for="" class="card__label">size</label>
+                                </td>
+                                <td class="card__select-column">
+                                    <select class="card__select" name="" id="">
+                                        <option value="">Choose option</option>
+                                        <option value="">large</option>
+                                        <option value="">small</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="card__select-column">
+                                    <label for="" class="card__label">material</label>
+                                </td>
+                                <td class="card__select-column">
+                                    <select class="card__select" name="" id="">
+                                        <option value="">Choose option</option>
+                                        <option value="">gold</option>
+                                        <option value="">silver</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="card__select-column">
+                                    <label for="" class="card__label">stone</label>
+                                </td>
+                                <td class="card__select-column">
+                                    <select class="card__select" name="" id="">
+                                        <option value="">Choose option</option>
+                                        <option value="">large</option>
+                                        <option value="">small</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="card__cart_button button">add to cart</div>
+                    <div class="card__info">
+                        <div class="card__question">Description</div>
+                        <div class="card__answer">подробнее</div>
                     </div>
-                    <div class="card_details_cart">
-                        <div class="card_details_cart_button button">add to cart</div>
+                    <div class="card__info">
+                        <div class="card__question">Payment</div>
+                        <div class="card__answer">подробнее</div>
                     </div>
-                    <div class="card_details_info">Description</div>
-                    <div class="card_details_info">Payment</div>
-                    <div class="card_details_info">Shipping & Return</div>
-                    <div class="card_details_info">How to choose the size?</div>
-                    <div class="card_details_social flex">
-                        <div class="card_details_social_link twitter">Tweet</div>
-                        <div class="card_details_social_link facebook">Share</div>
-                        <div class="card_details_social_link pinterest">Pin It</div>
-                        <div class="card_details_social_link google">Add</div>
-                        <div class="card_details_social_link mail">Email</div>
+                    <div class="card__info">
+                        <div class="card__question">Shipping & Return</div>
+                        <div class="card__answer">подробнее</div>
+                    </div>
+                    <div class="card__info">
+                        <div class="card__question">How to choose the size?</div>
+                        <div class="card__answer">подробнее</div>
+                    </div>
+                    <div class="card__social flex">
+                        <div class="card__social-link card__social-link_twitter">Tweet</div>
+                        <div class="card__social-link card__social-link_facebook">Share</div>
+                        <div class="card__social-link card__social-link_pinterest">Pin It</div>
+                        <div class="card__social-link card__social-link_google">Add</div>
+                        <div class="card__social-link card__social-link_mail">Email</div>
                     </div>
                 </div>
             </div>
