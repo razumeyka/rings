@@ -27,6 +27,13 @@
 }
 
 @font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNeueCyr-MediumItalic.eot?#iefix') format('embedded-opentype'),  url('../fonts/HelveticaNeueCyr-MediumItalic.woff') format('woff'), url('../fonts/HelveticaNeueCyr-MediumItalic.ttf')  format('truetype'), url('../fonts/HelveticaNeueCyr-MediumItalic.svg#HelveticaNeueCyr-MediumItalic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'Unna';
   src: url('../fonts/Unna-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/Unna-Regular.woff') format('woff'), url('../fonts/Unna-Regular.ttf')  format('truetype'), url('../fonts/Unna-Regular.svg#Unna-Regular') format('svg');
   font-weight: 400;
@@ -392,7 +399,7 @@ header .menu .with_submenu::after {
     display: none;
 }
 
-.mobile_menu.button {
+.button.button_light {
     display: none;
     border: 2px solid rgb(36, 31, 22);
     color: rgb(36, 31, 22);
@@ -756,10 +763,10 @@ header .menu .with_submenu::after {
 /* instagram_screen */
 
 .instagram_screen {
-    padding: 70px 0 50px;
+    padding: 70px 0 0;
 }
 
-.instagram_screen .small_caption {
+.small_caption {
     font-size: 24px;
     color: rgb(36, 31, 22);
     text-align: center;
@@ -778,24 +785,25 @@ header .menu .with_submenu::after {
     font-size: 15px;
 }
 
-.instagram_screen .carousel{
+.carousel{
     position: relative;
 }
 
-.instagram_screen .carousel .carousel_wr{
+.carousel .carousel_wr{
     overflow: hidden;
     margin: 0 -20px;
 }
-.instagram_screen .carousel .review_wrapper {
+
+.carousel .content_wrapper {
     width: 100%;
     overflow: hidden;
 }
 
-.instagram_screen .review_container {
+.content_container {
     width: 100%;
 }
 
-.instagram_screen .carousel .long{
+.carousel .long{
 	width:1000%;
 	-webkit-transition: all 0.15s linear 0s;
     -moz-transition: all 0.15s linear 0s;
@@ -803,41 +811,41 @@ header .menu .with_submenu::after {
     transition: all 0.15s linear 0s;
 }
 
-.instagram_screen .carousel .one_doc{
+.carousel .one_doc{
     padding: 0 20px;
     box-sizing: border-box;
     float: left;
     width: 2.5%;
 }
 
-.instagram_screen .carousel .one_doc .inner{
+.carousel .one_doc .inner{
 	width: 100%;
     font-size: 0;
 }
 
-.instagram_screen .carousel .one_doc img{
+.carousel .one_doc img{
 	width: 100%;
 }
 
-.instagram_screen .carousel .controls {
+.carousel .controls {
     margin: 28px auto 0;
     width: 68px;
     position: relative;
 }
 
-.instagram_screen .carousel .control{
+.carousel .control{
     background: url('../images/sprites.svg') no-repeat -153px -63px;
 	width: 18px;
 	height: 18px;
 	cursor:pointer;
 }
 
-.instagram_screen .carousel .control.next{
+.carousel .control.next{
     background-position: -183px -63px;
     float: right;
 }
 
-.instagram_screen .carousel .controls::before {
+.carousel .controls::before {
     content: "";
     background-color: rgb(148, 137, 117);
     position: absolute;
@@ -854,6 +862,7 @@ header .menu .with_submenu::after {
 footer {
     background-color: #241f16;
     padding: 40px 0 20px;
+    margin-top: 50px
 }
 
 footer .logo {
@@ -905,6 +914,323 @@ footer .copyright {
     text-align: center;
 }
 
+/* catalog page */
+
+.logo.inner-page_logo {
+    margin-bottom: 20px;
+}
+
+.inner-page {
+    padding-top: 210px;
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-size: 10px;
+    color: rgb(148, 137, 117);
+    text-transform: uppercase;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-right: 5px;
+    letter-spacing: 0.7px;
+}
+
+.breadcrumbs li a {
+    display: inline-block;
+    font-size: 10px;
+    color: rgb(148, 137, 117);
+    text-decoration: none;
+}
+
+.breadcrumbs .arrow {
+    font-size: 10px;
+}
+
+.collection {
+    background: url(../images/birds_bg_2.png) #ffffff center;
+    padding: 60px 40px 65px;
+    color: rgb(36, 31, 22);
+    text-align: center;
+    position: relative;
+    margin: 35px 0;
+}
+
+.collection__caption {
+    font: 700 60px "Unna";
+    color: rgb(36, 31, 22);
+    margin-bottom: 15px;
+}
+
+.collection__description {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.collection__image_frames {
+    border: 15px solid #bcae95;
+}
+
+.collection__image_frames:before {
+    width: 28%;
+    height: 60%;
+}
+
+.collection__image_frames:after {
+    width: 28%;
+    height: 60%;
+}
+
+.catalog {
+    margin: 0 -20px;
+}
+
+.item {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 20px;
+    position: relative;
+}
+
+.item a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.item__img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.item__favorite {
+    display: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    right: 30px;
+    top:30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 9px;
+}
+
+.item:hover .item__favorite {
+    display: flex;
+}
+
+.item__icon {
+    background: url(../images/sprites.svg) no-repeat -9px -100px;
+    width: 27px;
+    height: 30px;
+}
+
+.item__number {
+    font-size: 12px;
+    color: rgb(36, 31, 22);
+}
+
+.item__name {
+    font: 400 25px "Unna";
+    color: rgb(36, 31, 22);
+}
+
+.item__price {
+    font-size: 16px;
+    color: rgb(148, 137, 117);
+}
+
+.inner-page .button.button_light {
+    display: block;
+    margin: 35px auto;
+    text-transform: none;
+}
+
+.pagination__pagination-list {
+    justify-content: center;
+}
+
+.pagination__page-number {
+    font-size: 18px;
+    color: rgb(36, 31, 22);
+    padding: 0 6px; 
+    text-decoration: none;
+}
+
+.pagination__page-number_points {
+    padding: 0;
+}
+
+.pagination__page-number_prev {
+    padding: 0 10px 0 0;
+}
+
+.pagination__page-number_next {
+    padding: 0 0 0 15px;
+}
+
+/* card page */
+/* inner page */
+
+.card_details_name {
+    font: 700 40px "Unna";
+    color: rgb(36, 31, 22);
+}
+
+.card_details_description {
+    font: 500 14px; "HelveticaNeueCyr";
+    color: rgb(148, 137, 117);
+    font-style: italic;
+}
+
+.card_details_shipping a {
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 10px;
+    color: rgb(36, 31, 22);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.card_details_shipping_free {
+    background-color: rgb(218, 202, 172);
+}
+
+.card_details_shipping_express {
+    background-color: rgb(205, 223, 175);
+}
+
+.card_details_price {
+    font: 300 26px "HelveticaNeueCyr";
+    color: rgb(36, 31, 22);
+}
+
+.card_details_options_name {
+    font-size: 10px;
+    color: rgb(148, 137, 117);
+    text-transform: uppercase;
+}
+
+.card_details_options_select {
+    position: relative;
+}
+
+.card_details_options_select .select_field {
+    box-sizing: border-box;
+    border: 1px solid rgb(214, 207, 196);
+    background-color: rgb(255, 255, 255);
+    width: 139px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 10px;
+    font-size: 11px;
+    color: rgb(36, 31, 22);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.card_details_options_select .select_field:before{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    background: url(../images/sprites.svg) -277px -97px;
+    top: 26px;
+    right: 18px;
+    -webkit-transition: all 0.5s linear 0s;
+    -moz-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+.card_details_options_select.active .select_field:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.card_details_options_select ul {
+    display: none;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 42px;
+    left: 0;
+}
+
+.card_details_options_select.active ul {
+	display:block;
+}
+
+.card_details_options_select ul li {
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 10px;
+	cursor:default;
+}
+
+.card_details_cart_button {
+    background: rgb(36, 31, 22);
+    border: none;
+    border-radius: unset;
+    max-width: 320px;
+    height: 56px;
+    line-height: 56px;
+    font-weight: 400;
+    color: rgb(249, 245, 239);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card_details_info {
+    font: 400 18px "Unna";
+    color: rgb(36, 31, 22);
+}
+
+
+/* related_items */
+
+.related_items .small_caption {
+    text-transform: uppercase;
+}
+
+.related_items a {
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.related_items .one_doc_name {
+    font-size: 15px;
+    color: rgb(36, 31, 22);
+}
+
+.related_items .one_doc_price {
+    font-size: 16px;
+    color: rgb(148, 137, 117);
+}
+
+
+
+
+/* media */
 
 @media screen and (max-width: 1500px) {
 	
@@ -992,11 +1318,11 @@ footer .copyright {
         top: 16px;
     }
     
-    .mobile_menu.button {
+    .button.light_button {
         display: block;
     }
     
-    .instagram_screen .review_container {
+    .content_container {
         width: 133%;
     }
     
@@ -1033,19 +1359,19 @@ footer .copyright {
         font-size: 50px;
     }
     
-    .instagram_screen .carousel .carousel_wr {
+    .carousel .carousel_wr {
         margin: 0 -10px;
     }  
 
-    .instagram_screen .review_container {
+    .content_container {
         width: 200%;
     }
     
-    instagram_screen .carousel .carousel_wr {
+    .carousel .carousel_wr {
         margin: 0 -10px;
     }
     
-    .instagram_screen .carousel .one_doc {
+    .carousel .one_doc {
         padding: 0 10px;
     }		
 }

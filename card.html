@@ -39,8 +39,8 @@
         </div>
         <div class="second_line">
             <div class="wrapper">
-                <a href="/" class="logo"></a>
-                <a class="button light_button" href="#">menu</a>
+                <a href="/" class="logo inner-page_logo"></a>
+                <a class="button button_light" href="#">menu</a>
                 <nav class="navbar flex">
                     <ul class="menu">
                         <li class="with_submenu"><a href="#">Wedding</a>
@@ -97,122 +97,94 @@
             </div>
         </div>
     </header>
-    <section class="slider_screen">
-        <div class="background1"></div>
-        <div class="background2"></div>
+    <div class="inner_page">
         <div class="wrapper">
-            <div class="slider_wr">
-                <div id='coin-slider'>
-                    <a href="images/slide-1.jpg" target="_blank">
-                        <img src='images/slide-1.jpg' >
-                        <span class="text">
-                            <h1>Wedding Rings</h1>
-                            <div class="slide_description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
-                        </span>
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/">
+                        <span itemprop="name">Home</span>
                     </a>
-                    <a href="images/slide-2.jpg">
-                        <img src='images/slide-2.jpg' >
-                        <span class="text">
-                            <h2>Wedding Rings2</h2>
-                            <div class="slide_description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
-                        </span>
-                    </a>
-                    <a href="images/slide-1.jpg">
-                        <img src='images/slide-1.jpg' >
-                        <span class="text">
-                            <h2>Wedding Rings3</h2>
-                            <div class="slide_description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
-                        </span>
-                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="arrow"><span>></span></li>
+                <li class="unactive"><span></span>Engagement rings Branches  >  Tiny twig «Fiona»</li>
+                <li class="arrow"><span>></span></li>
+                <li class="unactive"><span></span>Branches</li>
+                <li class="arrow"><span>></span></li>
+                <li class="unactive"><span></span>Tiny twig «Fiona»</li>
+            </ol>
+            <div class="card flex">
+                <div class="card_photos"></div>
+                <div class="card_details">
+                    <div class="card_details_name">Tiny twig "Fiona"</div>
+                    <div class="card_details_description">Tiny twig engagement ring with Amethyst and Diamonds in Yellow gold</div>
+                    <div class="card_details_shipping flex">
+                        <a href="#" class="card_details_shipping_free">Free shipping</a>
+                        <a href="#" class="card_details_shipping_express">Express shipping</a>
+                    </div>
+                    <div class="card_details_price">$943.00</div>
+                    <div class="card_details_options flex">
+                        <div class="card_details_options_wr">
+                            <div class="card_details_options_name">size</div>
+                            <div class="card_details_options_select">
+                               <input type="hidden" name="size" value="size">
+                               <div class="select_field">
+                                   <div class="field">Choose option</div>
+                               </div>
+                               <ul>
+                                   <li class="field">маленький</li>
+                                   <li class="field">большой</li>
+                               </ul>
+                            </div>
+                        </div>
+                        <div class="card_details_options_wr">
+                            <div class="card_details_options_name">material</div>
+                            <div class="card_details_options_select">
+                               <input type="hidden" name="material" value="material">
+                               <div class="select_field">
+                                   <div class="field">Choose option</div>
+                               </div>
+                               <ul>
+                                   <li class="field">золото</li>
+                                   <li class="field">серебро</li>
+                               </ul>
+                            </div>
+                        </div>
+                        <div class="card_details_options_wr">
+                            <div class="card_details_options_name">stone</div>
+                            <div class="card_details_options_select">
+                               <input type="hidden" name="stone" value="stone">
+                               <div class="select_field">
+                                   <div class="field">Choose option</div>
+                               </div>
+                               <ul>
+                                   <li class="field">лунный камень</li>
+                                   <li class="field">синий камень</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_details_cart">
+                        <div class="card_details_cart_button button">add to cart</div>
+                    </div>
+                    <div class="card_details_info">Description</div>
+                    <div class="card_details_info">Payment</div>
+                    <div class="card_details_info">Shipping & Return</div>
+                    <div class="card_details_info">How to choose the size?</div>
+                    <div class="card_details_social flex">
+                        <div class="card_details_social_link twitter">Tweet</div>
+                        <div class="card_details_social_link facebook">Share</div>
+                        <div class="card_details_social_link pinterest">Pin It</div>
+                        <div class="card_details_social_link google">Add</div>
+                        <div class="card_details_social_link mail">Email</div>
+                    </div>
                 </div>
-                <div class="dark_background"></div>
-                <div class="image_frames"></div>
-                <a href="#" class="button">Buy it now</a>
-            </div>
-        </div>
-    </section>
-    <div class="range_screen">
-        <div class="wrapper">
-            <div class="plates_wr">
-                <a href="#" class="plate_wr ver rings_sets">
-                    <div class="plate">
-                        <div class="caption">Rings sets</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr sq classic">
-                    <div class="plate"> 
-                        <div class="caption">Classic</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr sq modern">
-                    <div class="plate">
-                        <div class="caption">Modern</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr sq vintage">
-                    <div class="plate">
-                        <div class="caption">Vintage</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr hor branch">
-                    <div class="plate">
-                        <div class="caption">Branch</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr sq heavy">
-                    <div class="plate">
-                        <div class="caption">Heavy</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr ver bridal_sets">
-                    <div class="plate">
-                        <div class="caption">Bridal sets</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr ver nature_inspired">
-                    <div class="plate">
-                        <div class="caption">Nature inspired</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-                <a href="#" class="plate_wr hor personalised">
-                    <div class="plate">
-                        <div class="caption">Personalised</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
-               <a href="#" class="plate_wr sq crown">
-                    <div class="plate">
-                        <div class="caption">Crown</div>
-                    </div>
-                    <div class="image_frames"></div>
-                </a>
             </div>
         </div>
     </div>
-    <div class="order_screen">
+    <div class="related_items">
         <div class="wrapper">
-            <div class="banner">
-                <div class="text">
-                    <div class="caption">Custom order</div>
-                    <div class="description">You can make an individual order and get a unique ring.</div>
-                    <a href="#" class="button">I want a unique ring</a>
-                </div>
-                <div class="image_frames"></div>
-            </div>
-        </div>
-    </div>
-    <section class="instagram_screen">
-        <div class="wrapper">
-            <div class="small_caption">Follow our Instagram</div>
-            <div class="insta_link">Follow <a href="#">@handmade_wedding_rings</a> for jewellery inspiration, styling tips & treats.</div>
+            <div class="small_caption">Related items</div>
             <div class="carousel" data-slide="0">
                 <div class="carousel_wr" >
                     <div class="content_wrapper">
@@ -222,6 +194,8 @@
                                 <div class="inner">
                                     <a href="images/classic.jpg">
                                         <img src="images/classic.jpg" alt="">
+                                        <div class="one_doc_name">Wood song</div>
+                                        <div class="one_doc_price">$59.00</div>
                                     </a>
                                 </div>
                             </div>
@@ -229,6 +203,8 @@
                                 <div class="inner">
                                     <a href="images/classic.jpg">
                                         <img src="images/classic.jpg" alt="">
+                                        <div class="one_doc_name">Forest grace</div>
+                                        <div class="one_doc_price">$420.00</div>
                                     </a>
                                 </div>
                             </div>
@@ -236,6 +212,8 @@
                                 <div class="inner">
                                     <a href="images/classic.jpg">
                                         <img src="images/classic.jpg" alt="">
+                                        <div class="one_doc_name">Magic branch</div>
+                                        <div class="one_doc_price">$179.00</div>
                                     </a>
                                 </div>
                             </div>
@@ -243,6 +221,8 @@
                                 <div class="inner">
                                     <a href="images/classic.jpg">
                                         <img src="images/classic.jpg" alt="">
+                                        <div class="one_doc_name">Secret of the elf</div>
+                                        <div class="one_doc_price">$870.00</div>
                                     </a>
                                 </div>
                             </div>
@@ -256,7 +236,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <footer>
         <div class="wrapper">
             <a href="/" class="logo"></a>
