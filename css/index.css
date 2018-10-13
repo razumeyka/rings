@@ -1098,7 +1098,7 @@ footer .copyright {
     font: 500 14px "Helvetica";
     color: rgb(148, 137, 117);
     font-style: italic;
-    margin: 10px 0 20px;
+    margin: 12px 0 16px;
 }
 
 .card__shipping a {
@@ -1123,7 +1123,7 @@ footer .copyright {
 .card__price {
     font: 300 26px "Helvetica";
     color: rgb(36, 31, 22);
-    margin: 25px 0 8px;
+    margin: 25px 0 10px;
 }
 
 .card__select-column {
@@ -1208,19 +1208,21 @@ footer .copyright {
     background: rgb(36, 31, 22);
     border: none;
     border-radius: unset;
-    max-width: 320px;
+    max-width: 220px;
     height: 56px;
     line-height: 56px;
     font-weight: 400;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
     text-align: center;
-    margin: 25px 0 30px;
+    padding: 0 20px;
+    margin: 22px 0 30px;
 }
 
-.card__info {
+.card__question-answer {
     font: 400 18px "Unna";
     color: rgb(36, 31, 22);
+    letter-spacing: 1.6px;
 }
 
 .card__question {
@@ -1230,20 +1232,22 @@ footer .copyright {
     padding: 15px 0 15px 40px;
 }
 
-.card__question::last-child {
+.card__info {
     border-bottom: 1px solid rgb(214, 207, 196);
 }
 
 .card__question::before {
+    content: "";
     background: url('../images/sprites.svg') no-repeat -107px -111px;
 	width: 14px;
 	height: 13px;
     position: absolute;
-    left: 0;
+    left: 10px;
+    top: 20px;
 }
 
-.card__info.card__info_active .card__question:before {
-    background-position: -134px -116px;
+.card__question.card__question_active:before {
+    background-position: -134px -110px;
 }
 
 .card__answer {
@@ -1255,30 +1259,51 @@ footer .copyright {
     margin-top: 25px;
 }
 
-
-/* related_items */
-
-.related_items .small_caption {
-    text-transform: uppercase;
+.card__social-link {
+    box-sizing: border-box;
+    padding: 0 26px 0 35px;
+    position: relative;
 }
 
-.related_items a {
+.card__social-link:before {
+    content: "";
+    background: #ffffff;
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.related-items {
+    padding-top: 79px;
+}
+
+.related-items__caption {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.carousel__item {
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
 }
 
-.related_items .one_doc_name {
+.carousel__name {
     font-size: 15px;
     color: rgb(36, 31, 22);
+    margin: 14px 0 3px;
 }
 
-.related_items .one_doc_price {
+.carousel__price {
     font-size: 16px;
     color: rgb(148, 137, 117);
 }
 
-
+.controls.related-items__carousel-controls {
+    margin: 50px auto 0;
+}
 
 
 /* media */

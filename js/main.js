@@ -91,9 +91,8 @@ $(document).ready(function(){
     $(".card__answer").hide();
     $('.card__question').click(function(){
             $(this).next().slideToggle(500);
-            $(this).toggleClass('card__info_active');
+            $(this).toggleClass('card__question_active');
     });
-
 });
 
 
