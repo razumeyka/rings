@@ -1077,7 +1077,8 @@ footer .copyright {
 /* card page */
 
 .card {
-    padding: 30px 0;
+    padding: 30px 0 50px;
+    position: relative;
 }
 
 .card__photos {
@@ -1275,8 +1276,45 @@ footer .copyright {
     top: 0;
 }
 
+.card__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    border: 1px solid rgb(214, 207, 196);
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    height: 25px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.card__control{
+    background: url('../images/sprites.svg') no-repeat -47px -110px;
+	width: 15px;
+	height: 13px;
+    float: left;
+	cursor:pointer;
+}
+
+.card__control_next{
+    background-position: -70px -110px;
+    float: right;
+}
+
+.card__controls::before {
+    content: "";
+    background-color: rgb(148, 137, 117);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 4px;
+    width: 1px;
+    height: 16px;
+}
+
 .related-items {
-    padding-top: 79px;
+    padding-top: 59px;
 }
 
 .related-items__caption {
