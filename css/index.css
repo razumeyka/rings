@@ -1127,10 +1127,20 @@ footer .copyright {
     margin: 25px 0 10px;
 }
 
+.card__details table {
+    border-collapse: collapse;
+}
+
+.card__details table tr {
+    margin-right: 20px;
+}
+
 .card__select-column {
     display: list-item;
     padding: 0;
     list-style: none;
+    position: relative;
+    margin-bottom: 2px;
 }
 
 .card__label {
@@ -1139,37 +1149,39 @@ footer .copyright {
     text-transform: uppercase;
 }
 
-.card__select {
+.card__select-column select {
+    display: none;
+}
+
+.card__select-field {
     position: relative;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
-    width: 139px;
-    height: 42px;
+    width: 137px;
+    height: 40px;
     line-height: 42px;
     padding: 0 10px;
-    margin-right: 20px;
     font-size: 11px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
-    position: relative;
 }
 
-.card_details_options_select .select_field:before{
+.card__select-field:before{
     content: '';
     position: absolute;
-    width: 14px;
+    width: 11px;
     height: 10px;
-    background: url(../images/sprites.svg) -277px -97px;
-    top: 26px;
-    right: 18px;
+    background: url(../images/sprites.svg) -143px -23px;
+    top: 15px;
+    right: 7px;
     -webkit-transition: all 0.5s linear 0s;
     -moz-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
     transition: all 0.5s linear 0s;
 }
 
-.card_details_options_select.active .select_field:before {
+.card__select-column_active .card__select-field:before {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -1177,7 +1189,7 @@ footer .copyright {
     transform: rotate(180deg);
 }
 
-.card_details_options_select ul {
+.card__select-column ul {
     display: none;
     background-color: rgb(255, 255, 255);
     width: 100%;
@@ -1186,17 +1198,18 @@ footer .copyright {
     list-style: none;
     position: absolute;
     box-sizing: border-box;
-    top: 42px;
+    top: 40px;
     left: 0;
 }
 
-.card_details_options_select.active ul {
+.card__select-column.card__select-column_active ul {
 	display:block;
 }
 
-.card_details_options_select ul li {
+.card__select-column ul li {
     display: block;
     box-sizing: border-box;
+    border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
     width: 100%;
     height: 42px;

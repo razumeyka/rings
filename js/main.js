@@ -75,15 +75,15 @@ $(document).ready(function(){
     
 // select
     
-    $('.select_field').click(function(){
-		$('.card_details_options_select').not($(this).closest('.card_details_options_select')).removeClass('active');
-		$(this).parent().toggleClass('active');
+    $('.card__select-field').click(function(){
+		$('.card__select-column').not($(this).closest('.card__select-column')).removeClass('card__select-column_active');
+		$(this).parent().toggleClass('card__select-column_active');
 	})
 	
-	$('.card_details_options_select li').click(function(){
-		$(this).closest('.card_details_options_select').find('input').val($(this).data('value'));
-		$(this).closest('.card_details_options_select').find('.select_field').html($(this).html());
-		$(this).closest('.card_details_options_select').toggleClass('active');
+	$('.card__select-column li').click(function(){
+		$(this).closest('.card__select-column').find('select').val($(this).data('value'));
+		$(this).closest('.card__select-column').find('.card__select-field').html($(this).html());
+		$(this).closest('.card__select-column').toggleClass('card__select-column_active');
 	});
     
 // question-answer
