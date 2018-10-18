@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
 //search
-    
+   
     $('.search').click( function() { 
-        $('.search').addClass('active');
+        $('.search').toggleClass('active');
         $('.search input').focus();
     });
     
@@ -16,7 +16,7 @@ $(document).ready(function(){
     
 //mobile_menu
     
-    $('.mobile_menu').click( function() { 
+    $('.light_button').click( function() { 
         $('header .menu').slideToggle(300);
     });
 

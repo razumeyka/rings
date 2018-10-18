@@ -284,8 +284,8 @@ header .second_line {
     background-color: rgb(249, 245, 239);
     padding: 20px 0 15px;
     position: relative;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
 }
 
 header.fixed .second_line {
@@ -298,8 +298,8 @@ header.fixed .second_line {
     width: 100px;
     height: 85px;
     margin: 0 auto 50px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
 }
 
 header.fixed .logo {
@@ -399,7 +399,7 @@ header .menu .with_submenu::after {
     display: none;
 }
 
-.button.button_light {
+.button.light_button {
     display: none;
     border: 2px solid rgb(36, 31, 22);
     color: rgb(36, 31, 22);
@@ -437,6 +437,7 @@ header .menu .with_submenu::after {
 
 .slider_screen .slider_wr {
     position: relative;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .slider_screen .dark_background {
@@ -451,7 +452,6 @@ header .menu .with_submenu::after {
 
 .image_frames {
     border: 15px solid rgba(255,255,255,0.3);
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
     left: 0;
@@ -580,9 +580,9 @@ header .menu .with_submenu::after {
     text-align: left;
 }
 
-.range_screen .plate_wr .image_frames {
-    -webkit-transition: all 300ms ease-in;
-    -o-transition: all 300ms ease-in;
+.range_screen .plate_wr .image_frames, .range_screen .image_frames:before, .range_screen .image_frames:after {
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
     -webkit-transition: all 300ms linear;
     -o-transition: all 300ms linear;
     transition: all 300ms linear;
@@ -927,7 +927,7 @@ footer .copyright {
 .breadcrumbs {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 30px;
     overflow: hidden;
     font-size: 10px;
     color: rgb(148, 137, 117);
@@ -959,7 +959,7 @@ footer .copyright {
     color: rgb(36, 31, 22);
     text-align: center;
     position: relative;
-    margin: 35px 0;
+    margin-bottom: 35px;
 }
 
 .collection__caption {
@@ -1077,7 +1077,7 @@ footer .copyright {
 /* card page */
 
 .card {
-    padding: 30px 0 50px;
+    padding-bottom: 50px;
     position: relative;
 }
 
@@ -1360,9 +1360,8 @@ footer .copyright {
 
 .cart__caption {
     font: 700 40px "Unna";
-    margin: 27px 0 30px;
+    margin-bottom: 30px;
 }
-
 
 .cart__table {
     border: 1px solid rgb(214, 207, 196);
@@ -1433,8 +1432,10 @@ footer .copyright {
 }
 
 .cart__quantity-buttons {
-    display: inline-block;
-    font-size: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 117px;
+    margin: 0 auto;
     border: 1px solid rgb(214, 207, 196);
 }
 
@@ -1459,15 +1460,12 @@ footer .copyright {
     background: #f9f5ef;
 }
 
-.cart__subtotal {
-    width: 180px;
-}
-
 .cart__remove {
     width: 40px;
 }
 
 .cart__price-subtotal {
+    width: 180px;
     font-size: 18px;
     font-weight: 500;
 }
@@ -1534,32 +1532,7 @@ footer .copyright {
     }
     
     .range_screen .plates_wr {
-        -ms-grid-columns:  1fr 20px 1fr;
-        grid-template-columns:  repeat(2, 1fr);
         grid-gap:20px;
-        -ms-grid-rows:  auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto;
-            grid-template-areas: 
-            "a b"
-            "a b"
-            "a e"
-            "f e"
-            "f e"
-            "d c"
-            "d c"
-            "d g"
-            "l g"
-            "l g"
-            "h m"
-            "h m"
-            "h m";
-    }
-    
-    .range_screen .plate_wr.hor {
-        padding-top: 100%;
-    }
-    
-    .range_screen .plate_wr.hor .caption{
-        text-align: center;
     }
 }
 
@@ -1588,6 +1561,34 @@ footer .copyright {
     
     .button.light_button {
         display: block;
+    }
+    
+    .range_screen .plates_wr {
+        -ms-grid-columns:  1fr 20px 1fr;
+        grid-template-columns:  repeat(2, 1fr);
+        -ms-grid-rows:  auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto 20px auto;
+        grid-template-areas: 
+            "a b"
+            "a b"
+            "a e"
+            "f e"
+            "f e"
+            "d c"
+            "d c"
+            "d g"
+            "l g"
+            "l g"
+            "h m"
+            "h m"
+            "h m";
+    }
+    
+    .range_screen .plate_wr.hor {
+        padding-top: 100%;
+    }
+    
+    .range_screen .plate_wr.hor .caption{
+        text-align: center;
     }
     
     .content_container {
@@ -1641,7 +1642,11 @@ footer .copyright {
     
     .carousel .one_doc {
         padding: 0 10px;
-    }		
+    }	
+    
+    .cart__table_wr {
+        overflow-x: scroll;
+    }
 }
 
 @media screen and (max-width: 639px) {
