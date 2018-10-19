@@ -960,7 +960,7 @@ footer .copyright {
     color: rgb(36, 31, 22);
     text-align: center;
     position: relative;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .collection__caption {
@@ -989,7 +989,7 @@ footer .copyright {
 }
 
 .catalog {
-    margin: 0 -20px;
+    margin: 20px -20px 0;
 }
 
 .item {
@@ -1046,7 +1046,7 @@ footer .copyright {
     color: rgb(148, 137, 117);
 }
 
-.inner-page .button.button_light {
+.inner-page .button.light_button {
     display: block;
     margin: 35px auto;
     text-transform: none;
@@ -1756,22 +1756,26 @@ footer .copyright {
 
 /*ui-slider-range*/
 
-.price-slider {
+.filters {
+    display: none;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
     width: 292px;
-    height: 184px;
     font-size: 13px;
-    padding: 30px 20px;
+    padding: 25px 18px;
 }
 
-.price-slider p {
-    margin: 0 0 20px;
+.filters.filters_active {
+    display: block;
 }
 
-.price-slider input {
+.filters p {
+    margin: 0 0 25px;
+}
+
+.filters input {
     border: none;
 }
 
@@ -1829,15 +1833,19 @@ footer .copyright {
     background-color: rgb(36, 31, 22);
     position: absolute;
     left: 3px;
-    top: 10px;
+    top: 11px;
     width: 6px;
     height: 1px;
     z-index: 3;
 }
 
-.price-slider .black_button {
+.filters .black_button {
     width: 100%;
     max-width: none;
+    margin: 40px 0 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
 }
 
 

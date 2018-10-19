@@ -86,6 +86,7 @@ $(document).ready(function(){
 		$(this).closest('.card__select-column').toggleClass('card__select-column_active');
 	});
     
+    
 // question-answer
     
     $(".card__answer").hide();
@@ -94,7 +95,11 @@ $(document).ready(function(){
         $(this).toggleClass('card__question_active');
     });
     
-// price-slider
+// price-filter
+    
+    $('.card__select-field_price').click(function(){
+		$('.filters').toggleClass('filters_active');
+	})
     
     $( "#slider-range" ).slider({
       range: true,
