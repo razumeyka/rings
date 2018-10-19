@@ -116,6 +116,68 @@
                 <div class="collection__description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
                 <div class="collection__image_frames image_frames"></div>
             </div>
+            <table class="card__filters">
+                <tbody class="flex between">
+                    <tr>
+                        <td class="card__select-column">
+                            <select name="" id=""></select>
+                            <div class="card__select-field">price</div>
+                            <div class="price-slider">
+                                <p>
+                                  <label for="amount">Price:</label>
+                                  <input type="text" id="amount" readonly>
+                                </p>
+                                <div class="ui-slider" id="slider-range">
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                </div>
+                                <a href="#" class="button black_button">apply</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="card__select-column">
+                            <select name="" id=""></select>
+                            <div class="card__select-field">material</div>
+                            <ul>
+                               <li>gold</li>
+                               <li>silver</li>
+                            </ul>                                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="card__select-column">
+                            <select name="" id=""></select>
+                            <div class="card__select-field">stone</div>
+                            <ul>
+                               <li>small</li>
+                               <li>large</li>
+                            </ul>                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="card__select-column">
+                            <select name="" id=""></select>
+                            <div class="card__select-field">color</div>
+                            <ul>
+                               <li>red</li>
+                               <li>green</li>
+                            </ul>                   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="card__select-column">
+                            <select name="" id=""></select>
+                            <div class="card__select-field">sort</div>
+                            <ul>
+                               <li>price</li>
+                               <li>color</li>
+                            </ul>                   
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <div class="catalog flex">
                 <div class="item">
                     <a href="images/classic.jpg">
@@ -256,6 +318,7 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/coin-slider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script src="js/main.js"></script>

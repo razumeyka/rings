@@ -90,9 +90,22 @@ $(document).ready(function(){
     
     $(".card__answer").hide();
     $('.card__question').click(function(){
-            $(this).next().slideToggle(500);
-            $(this).toggleClass('card__question_active');
+        $(this).next().slideToggle(500);
+        $(this).toggleClass('card__question_active');
     });
+    
+// price-slider
+    
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ));
 });
 
 
