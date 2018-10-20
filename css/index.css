@@ -1041,7 +1041,7 @@ footer .copyright {
     font-size: 13px;
     position: relative;
     padding-left: 25px;
-    margin: 10px 0;
+    margin: 5px 0 17px;
 }
 
 .filers_column input {
@@ -1060,7 +1060,7 @@ footer .copyright {
 
 .filters.filter-checkbox .black_button {
     max-width: 136px;
-    margin: 0 0 0 auto;
+    margin: 10px 0 5px auto;
 }
 
 .catalog {
@@ -1276,6 +1276,7 @@ footer .copyright {
     box-sizing: border-box;
     top: 40px;
     left: 0;
+    z-index: 1;
 }
 
 .card__select-column.card__select-column_active ul {
