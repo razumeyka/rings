@@ -105,11 +105,13 @@ header {
     position: fixed;
     right: 0;
     left: 0;
-    top: 0;
+	top: 0;
+    min-width: 360px;
 }
 
 header .first_line {
     background-color: rgb(36, 31, 22);  
+    letter-spacing: 0.8px;
 }
 
 header .wrapper {
@@ -120,76 +122,65 @@ header .wrapper {
     position: absolute;
     left: 38px;
     height: 36px;
-    pointer-events: none;
+    text-transform: uppercase; 
+    font-size: 12px;
+    color: rgb(249, 245, 239); 
+	display:flex;	
+	z-index: 3;
+	width: 300px;
 }
 
-.search input {
-    display: block;
-    box-sizing: border-box;
-    background-color: rgb(36, 31, 22);
+.search_icon {
+	background: url(../images/sprites.svg) no-repeat -8px -4px;
+    min-width: 36px;
+    height: 36px;
+}
+
+.search_text{   
+    width: 100%;
+    position: relative;
+}
+
+.search_placeholder{
+	position: absolute;
+	line-height: 36px;
+	width: 100%;
+}
+
+.search_placeholder.disabled{
+	display:none;
+}
+
+.search_input{ 
+    box-sizing: border-box; 
     border: none;
-    height: 100%;
-    max-width: 300px;
-    outline: none;
-    padding-left: 40px;
-    font-size: 12px;
-    color: rgb(249, 245, 239);
-    text-transform: uppercase;
-    pointer-events: all;
-}
+    height: 36px; 
+    outline: none; 
+    margin: 0;
+    padding: 0;
+    background: #241f16;
+	color: #f9f5ef;
+	width: 100%;
+} 
 
-.search .icon {
-    background: url(../images/sprites.svg) no-repeat -8px -9px;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 0px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    pointer-events: all;
-}
 
-.search::after {
-    content: "search";
-    position: absolute;
-    height: fit-content;
-    left: 33px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    font-size: 12px;
-    color: rgb(249, 245, 239);
-    text-transform: uppercase;
-    pointer-events: all;
-}
 
-.search input:not([type=submit]):focus {
-	border: none;
-}
-
-.search.active::after {
-    display: none;
-}
 
 header .header_nav {
-    display: flex;
-    height: 36px;
+    display: flex; 
     margin: 0 0 0 auto;
 }
 
 header .select {
-    position: relative;
-    margin: auto 5px;
-    cursor: default;
+    position: relative; 
 }
 
 header .select .select_field {
-    box-sizing: border-box;
+	box-sizing: border-box;
     font-size: 12px;
     color: rgb(249, 245, 239);
     text-transform: uppercase;
-    line-height: 30px;
+    line-height: 36px;
     padding: 0 20px 0 10px;
     position: relative;
     cursor: pointer;
@@ -202,11 +193,8 @@ header .select .select_field:before{
     height: 8px;
     position: absolute;
     right: 3px;
-    top: 11px;
-    -webkit-transition: all 0.5s linear 0s;
-    -moz-transition: all 0.5s linear 0s;
-    -o-transition: all 0.5s linear 0s;
-    transition: all 0.5s linear 0s;
+    top: 13px;
+    transition: all 0.3s linear 0s;
 }
 
 header .select.active .select_field:before {
@@ -224,9 +212,8 @@ header .select ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    position: absolute;
-    box-sizing: border-box;
-    top: 33px;
+    position: absolute; 
+    top: 36px;
     left: 0;
     z-index: 2;
 }
@@ -235,9 +222,8 @@ header .select ul li a{
     display: block;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
-    border-top: 1px solid #f9f5ef;
-    height: 39px;
-    line-height: 39px;
+    border-top: 1px solid #f9f5ef; 
+    line-height: 40px;
     font-size: 12px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
@@ -258,59 +244,55 @@ header .select ul li.active {
 header .header_nav>a {
     display: block;
     text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.8px;
+    text-decoration: none; 
     color: rgb(249, 245, 239);
     margin: auto 0 auto 20px;
-    line-height: 30px;
+    line-height: 36px;
+	height: 36px;
 }
 
 header .favorites {
-    background: url(../images/sprites.svg) no-repeat -45px -5px;
-    width: 29px;
-    height: 30px;
+    background: url(../images/sprites.svg) no-repeat -45px -3px;
+    width: 29px; 
 }
 
 header .cart {
-    background: url(../images/sprites.svg) no-repeat -86px -5px;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 32px;
-    text-decoration: none;
-    box-sizing: border-box;
+    background: url(../images/sprites.svg) no-repeat -86px -3px; 
+    padding-left: 30px;  
 }
 
 header .second_line {
     background-color: rgb(249, 245, 239);
-    padding: 20px 0 15px;
-    position: relative;
-    -webkit-transition: all 0.4s linear;
-    transition: all 0.4s linear;
+    padding: 20px 0 0;
+    position: relative; 
+    transition: all 0.2s linear;
 }
 
 header.fixed .second_line {
-    padding: 10px 0 10px;
+    padding: 0;
 }
 
 .logo {
     display: block;
     background-color: rgb(36, 31, 22);
     width: 100px;
-    height: 85px;
-    margin: 0 auto 50px;
-    -webkit-transition: all 0.4s linear;
-    transition: all 0.4s linear;
+    height: 80px;
+    margin: 0 auto 10px;
+    transition: all 0.2s linear;
 }
 
-header.fixed .logo {
-    width: 80px;
-    height: 60px;
-    margin: 0 auto 12px;
+header.fixed .logo { 
+    height: 0;
+	width:0;
+    margin: 0 auto;
 }
 
 .menu{
-	margin:0 auto;
+	margin:0;
 	padding:0;    
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu:after{
@@ -320,79 +302,64 @@ header.fixed .logo {
 }
 
 .menu li{
-    display: block;
-    float: left;
+    display: block; 
     position: relative;
 }  
 
 .menu a{
-    display: block; 
+    display: block;
     text-decoration: none;
     font-size: 13px;
-    color: rgb(0, 0, 0);
+    color: rgb(36, 31, 22);
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 0 23px;
+    padding: 20px 18px;
+    line-height: 1;
 }
 
-header .menu .with_submenu::after {
+.menu a:hover{
+	color: rgb(148, 137, 117);
+}
+
+header .menu .with_submenu>a::after {
     content: "";
-    background: url(../images/sprites.svg) no-repeat -143px -25px;
-    width: 10px;
-    height: 8px;
-    position: absolute;
-    right: 8px;
-    top: 6px;
-}
-
-.submenu_background {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 225px;
-    height: 270px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-}
-
-.submenu_background.fixed {
-    position: fixed;
-    top: 145px;
-}
-
-.submenu_background.active {
-    display: block;
+    background: url(../images/sprites.svg) no-repeat -139px -22px;
+    width: 13px;
+    height: 11px;
+    display: inline-block;
 }
 
 .menu .submenu {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    top: 35px;
-    left: 0;
-    width: 100%;
+	position: absolute;
+    margin: 0; 
+    top: 53px;
+    left: -17px;
+    width: 200px; 
     background-color: rgb(255, 255, 255);
     display: none;
     z-index: 1002;
-}
+    opacity: 0.95;
+    padding: 0 0 20px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    border-top: 1px solid rgb(222, 222, 222);
+    transition: padding 0.3s linear 0s;
+} 
 
-.menu li:hover .submenu {
-    display: block;
+
+.menu .submenu.active{
+    padding-top: 20px;
 }
 
 .menu .submenu li {
-    position: relative;
-    transition: all .2s linear 0s;
+    position: relative; 
 }
 
 .menu .submenu li a {
-    position: relative;
+	position: relative;
     text-decoration: none;
-    font-size: 15px;
-    text-transform: none;
-    padding: 7px 0 7px 23px;
+    font-size: 14px;
+    text-transform: none; 
+    padding: 13px 35px;
 }
 
 .mobile_menu {
@@ -404,9 +371,13 @@ header .menu .with_submenu::after {
     border: 2px solid rgb(36, 31, 22);
     color: rgb(36, 31, 22);
     text-transform: uppercase;
-    margin: 0 auto;
-    max-width: 258px;
-    padding: 0 20px;
+    margin: 0 auto 20px;
+    max-width: 150px;
+    padding: 0;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    height: 46px;
+    line-height: 46px;
 }
 
 /* slider_screen */
@@ -414,16 +385,16 @@ header .menu .with_submenu::after {
 .slider_screen {
     height: 540px;
     position: relative;
-    padding-top: 290px;
+    margin-top: 260px;
 }
 
 .slider_screen .background1 {
-    background: url(../images/birds_bg.png) rgb(188, 174, 149); 
+    background: url(../images/birds_bg.png) rgb(188, 174, 149);
     position: absolute;
     right: 0;
-    top: 250px;
-    width: calc((100% + 870px)/2);   
-    height: 440px; 
+    top: -40px;
+    width: calc((100% + 870px)/2);
+    height: 440px;
 }
 
 .slider_screen .background2 {
@@ -431,7 +402,7 @@ header .menu .with_submenu::after {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: calc((100% + 220px)/2);   
+    width: calc((100% + 220px)/2);
     height: 440px;
 }
 
@@ -568,23 +539,19 @@ header .menu .with_submenu::after {
 .caption {
     font: 700 66px "Unna";
     color: rgb(249, 245, 239);
-    text-align: center;
+    text-align: center; 
+    line-height: 1;
 }
 
-.range_screen .caption  {
+.range_screen .caption{
     padding: 55px 55px;
-    line-height: 0.9;
 }
 
 .range_screen .plate_wr.hor .caption {
     text-align: left;
 }
 
-.range_screen .plate_wr .image_frames, .range_screen .image_frames:before, .range_screen .image_frames:after {
-    -webkit-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
-    -webkit-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
+.range_screen .plate_wr .image_frames, .range_screen .image_frames:before, .range_screen .image_frames:after { 
     transition: all 300ms linear;
 }
 
@@ -805,10 +772,7 @@ header .menu .with_submenu::after {
 }
 
 .carousel .long{
-	width:1000%;
-	-webkit-transition: all 0.15s linear 0s;
-    -moz-transition: all 0.15s linear 0s;
-    -o-transition: all 0.15s linear 0s;
+	width:1000%; 
     transition: all 0.15s linear 0s;
 }
 
@@ -1250,10 +1214,7 @@ footer .copyright {
     height: 10px;
     background: url(../images/sprites.svg) -143px -23px;
     top: 15px;
-    right: 7px;
-    -webkit-transition: all 0.5s linear 0s;
-    -moz-transition: all 0.5s linear 0s;
-    -o-transition: all 0.5s linear 0s;
+    right: 7px; 
     transition: all 0.5s linear 0s;
 }
 
@@ -1591,6 +1552,44 @@ footer .copyright {
     header {
         position: absolute;
     }
+	
+	 header .menu{
+        display: none;   
+		padding: 25px 0;
+		border-top: 1px solid rgb(148, 137, 117);
+    }
+    
+    header .menu li {
+        float: none;
+    }
+    
+    header .menu li a {
+		padding: 15px 0;
+		text-align: center;
+    }
+	
+	header .menu .with_submenu>a::after{
+		display:none;
+	}
+    
+    .menu .submenu {
+        position: static;    
+		box-shadow: none;
+		width: 100%;
+		border-bottom: 1px solid rgb(222, 222, 222);
+		padding-top: 20px;
+		transition: none;
+    }
+    
+    header .menu .with_submenu::after {
+        left: 0;
+        right: auto;
+        top: 16px;
+    }
+    
+    .button.light_button {
+        display: block;
+    }
     
     .search {
         left: 13px;
@@ -1614,31 +1613,7 @@ footer .copyright {
 }
 
 @media screen and (max-width: 1023px) {
-    header .menu{
-        display: none;
-    }
-    
-    header .menu li {
-        float: none;
-    }
-    
-    header .menu li a {
-        padding: 10px 15px;
-    }
-    
-    .menu .submenu {
-        position: static;
-    }
-    
-    header .menu .with_submenu::after {
-        left: 0;
-        right: auto;
-        top: 16px;
-    }
-    
-    .button.light_button {
-        display: block;
-    }
+   
     
     .range_screen .plates_wr {
         -ms-grid-columns:  1fr 20px 1fr;
@@ -1673,35 +1648,31 @@ footer .copyright {
     }
     
     footer .menu li {
-        float: none;
+        width: 100%;
     }
 	
     footer .menu li a {
-        text-align: center;
+		text-align: center;
+		padding: 15px 0;
     }
 }
 
 @media screen and (max-width: 767px) {
     
-    .search.active  {
-        right: 15px;
-        z-index: 1;
-    }    
-    
-    .search input {
-        max-width: 40px;
-    }
-    
-    .search.active input {
-        width: 100%;
-        max-width: none;
-    }
-    
-    .search:after {
-        display: none;
-    }
+	.search{
+	    width: 40px;
+	}	
+	
+	.search_placeholder{
+		display:none;
+	}
+	
+	.search.active{
+	    right: 15px;
+		width: 100%;
+	}  
 
-    .caption {
+	.caption{
         font-size: 50px;
     }
     
@@ -1758,6 +1729,10 @@ footer .copyright {
             "h"
             "m"
             "m";
+    }
+	
+	.caption{
+        font-size: 62px;
     }
 }
 
