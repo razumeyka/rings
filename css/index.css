@@ -988,6 +988,81 @@ footer .copyright {
     height: 60%;
 }
 
+.filters {
+    display: none;
+    box-sizing: border-box;
+    border: 1px solid rgb(214, 207, 196);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
+    width: 292px;
+    font-size: 13px;
+    padding: 25px 18px;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+}
+
+.filter-price.filters_active {
+    display: block;
+}
+
+.filters p {
+    margin: 0 0 25px;
+}
+
+.filters input {
+    border: none;
+}
+
+.filters .black_button {
+    width: 100%;
+    max-width: none;
+    margin: 40px 0 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.filter-checkbox {
+    width: 450px;
+}
+
+.filter-checkbox.filters_active {
+    display: block;
+}
+
+.filers_column {
+    box-sizing: border-box;
+    width: 33.3333%;
+}
+
+.filers_column label {
+    display: block;
+    font-size: 13px;
+    position: relative;
+    padding-left: 25px;
+    margin: 10px 0;
+}
+
+.filers_column input {
+    display: none;
+}
+
+.filers_column label::before {
+    content: "";
+    border: 1px solid rgb(214, 207, 196);
+    background-color: rgb(255, 255, 255);
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+}
+
+.filters.filter-checkbox .black_button {
+    max-width: 136px;
+    margin: 0 0 0 auto;
+}
+
 .catalog {
     margin: 20px -20px 0;
 }
@@ -1756,29 +1831,6 @@ footer .copyright {
 
 /*ui-slider-range*/
 
-.filters {
-    display: none;
-    box-sizing: border-box;
-    border: 1px solid rgb(214, 207, 196);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
-    width: 292px;
-    font-size: 13px;
-    padding: 25px 18px;
-}
-
-.filters.filters_active {
-    display: block;
-}
-
-.filters p {
-    margin: 0 0 25px;
-}
-
-.filters input {
-    border: none;
-}
-
 .ui-slider {
     background-color: rgb(36, 31, 22);
     position: relative;
@@ -1839,14 +1891,10 @@ footer .copyright {
     z-index: 3;
 }
 
-.filters .black_button {
-    width: 100%;
-    max-width: none;
-    margin: 40px 0 0;
-    height: 40px;
-    line-height: 40px;
-    font-size: 13px;
-}
+
+
+
+
 
 
 

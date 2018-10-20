@@ -95,10 +95,14 @@ $(document).ready(function(){
         $(this).toggleClass('card__question_active');
     });
     
-// price-filter
+// filters
     
     $('.card__select-field_price').click(function(){
-		$('.filters').toggleClass('filters_active');
+		$('.filter-price').toggleClass('filters_active');
+	})
+    
+    $('.card__select-field_material').click(function(){
+		$('.filter-checkbox').toggleClass('filters_active');
 	})
     
     $( "#slider-range" ).slider({
