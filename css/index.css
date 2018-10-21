@@ -1506,6 +1506,13 @@ footer .copyright {
     font-weight: 500;
 }
 
+.cart__remove-button {
+    display: block;
+    background: rgb(36, 31, 22);
+    width: 10px;
+    height: 10px;
+}
+
 .cart__order-total {
     box-sizing: border-box;
     border: 1px solid rgb(36, 31, 22);
