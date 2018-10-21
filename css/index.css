@@ -881,10 +881,6 @@ footer .copyright {
 
 /* catalog page */
 
-.logo.inner-page_logo {
-    margin-bottom: 20px;
-}
-
 .inner-page {
     padding-top: 210px;
 }
@@ -1614,6 +1610,10 @@ footer .copyright {
     
     .range_screen .plates_wr {
         grid-gap:20px;
+    }
+    
+    .inner-page {
+        padding-top: 230px;
     }
 }
 
