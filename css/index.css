@@ -1396,7 +1396,7 @@ footer .copyright {
 
 /* cart */
 
-.cart__caption {
+.cart h1 {
     font: 700 40px "Unna";
     margin-bottom: 30px;
 }
@@ -1405,6 +1405,7 @@ footer .copyright {
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
     width: 100%;
+    min-width: 900px;
     border-collapse: collapse;
 }
 
@@ -1428,6 +1429,11 @@ footer .copyright {
     border: 1px solid rgb(214, 207, 196);
     padding: 20px 17px;
     text-align: center;
+    width: 180px;
+}
+
+.cart__table td.cart__product {
+    width: auto;
 }
 
 .cart__photo {
@@ -1441,6 +1447,7 @@ footer .copyright {
 }
 
 .cart__description {
+    flex: 1;
     margin: auto 0;
 }
 
@@ -1462,25 +1469,21 @@ footer .copyright {
 .cart__price {
     font-size: 18px;
     font-weight: 300;
-    width: 180px;
-}
-
-.cart__quantity {
-    width: 180px;
 }
 
 .cart__quantity-buttons {
     display: flex;
     flex-wrap: nowrap;
-    width: 117px;
+    width: 120px;
     margin: 0 auto;
+    box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
 }
 
 .cart__quantity-input {
     box-sizing: border-box;
     background: #f9f5ef;
-    width: 39px;
+    width: 33.3333%;
     height: 39px;
     padding: 0;
     text-align: center;
@@ -1498,12 +1501,11 @@ footer .copyright {
     background: #f9f5ef;
 }
 
-.cart__remove {
+.cart__table td.cart__remove {
     width: 40px;
 }
 
 .cart__price-subtotal {
-    width: 180px;
     font-size: 18px;
     font-weight: 500;
 }
@@ -1517,13 +1519,16 @@ footer .copyright {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 11px 82px 10px 20px;
+    padding: 11px 20px 10px 20px;
     margin: 20px 0;
     font-size: 13px;
     text-transform: uppercase;
 }
 
 .cart__price-total {
+    display: block;
+    width: 220px;
+    text-align: center;
     font-size: 22px;
     font-weight: 500;
 }
@@ -1613,8 +1618,7 @@ footer .copyright {
 }
 
 @media screen and (max-width: 1023px) {
-   
-    
+     
     .range_screen .plates_wr {
         -ms-grid-columns:  1fr 20px 1fr;
         grid-template-columns:  repeat(2, 1fr);
@@ -1655,6 +1659,26 @@ footer .copyright {
 		text-align: center;
 		padding: 15px 0;
     }
+    
+    .cart__table_wr {
+        overflow-x: scroll;
+    }
+    
+    .cart__table td.cart__price, .cart__table td.cart__price-subtotal {
+        width: 130px;
+    }
+    
+    .cart__table td.cart__quantity {
+        width: 150px;
+    }
+    
+    .cart__price-total {
+        text-align: right;
+    }
+    
+    .cart .black_button {
+        max-width: 190px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -1691,10 +1715,6 @@ footer .copyright {
     .carousel .one_doc {
         padding: 0 10px;
     }	
-    
-    .cart__table_wr {
-        overflow-x: scroll;
-    }
 }
 
 @media screen and (max-width: 639px) {
