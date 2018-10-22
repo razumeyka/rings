@@ -948,7 +948,19 @@ footer .copyright {
     height: 60%;
 }
 
-.filters {
+.filters__for-mobile {
+    flex-direction: column;
+}
+
+.filters__button {
+    display: none;
+}
+
+.filters__group .filters__filter {
+    margin-right: 20px;
+}
+
+.filters__inner {
     display: none;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
@@ -962,19 +974,19 @@ footer .copyright {
     top: 45px;
 }
 
-.filter-price.filters_active {
-    display: block;
+.filters__filter.filters__filter_active .select-field_bordered {
+    border: 2px solid rgb(36, 31, 22);
 }
 
-.filters p {
+.filters__inner p {
     margin: 0 0 25px;
 }
 
-.filters input {
+.filters__inner input {
     border: none;
 }
 
-.filters .black_button {
+.filters__inner .black_button {
     width: 100%;
     max-width: none;
     margin: 40px 0 0;
@@ -983,44 +995,41 @@ footer .copyright {
     font-size: 13px;
 }
 
-.filter-checkbox {
+.filters__inner_filter-checkbox {
     width: 450px;
 }
 
-.filter-checkbox.filters_active {
+.filters__inner_filter-checkbox label {
     display: block;
-}
-
-.filers_column {
     box-sizing: border-box;
     width: 33.3333%;
-}
-
-.filers_column label {
-    display: block;
     font-size: 13px;
     position: relative;
     padding-left: 25px;
-    margin: 5px 0 17px;
+    margin: 5px 0 12px;
 }
 
-.filers_column input {
+.filters__inner_filter-checkbox input {
     display: none;
 }
 
-.filers_column label::before {
+.filters__inner_filter-checkbox label::before {
     content: "";
     border: 1px solid rgb(214, 207, 196);
-    background-color: rgb(255, 255, 255);
-    width: 18px;
-    height: 18px;
+    background: rgb(255, 255, 255);
+    width: 15px;
+    height: 15px;
     position: absolute;
     left: 0;
 }
 
-.filters.filter-checkbox .black_button {
+.filters__inner_filter-checkbox label.active::before {
+    background: #d6cfc4;
+}
+
+.filters__inner.filters__inner_filter-checkbox .black_button {
     max-width: 136px;
-    margin: 10px 0 5px auto;
+    margin: 15px 0 5px auto;
 }
 
 .catalog {
@@ -1061,7 +1070,7 @@ footer .copyright {
 }
 
 .item__icon {
-    background: url(../images/sprites.svg) no-repeat -9px -100px;
+    background: url(../images/sprites.svg) no-repeat -8px -100px;
     width: 27px;
     height: 30px;
 }
@@ -1069,6 +1078,7 @@ footer .copyright {
 .item__number {
     font-size: 12px;
     color: rgb(36, 31, 22);
+    padding-left: 2px;
 }
 
 .item__name {
@@ -1079,6 +1089,7 @@ footer .copyright {
 .item__price {
     font-size: 16px;
     color: rgb(148, 137, 117);
+    line-height: 1; 
 }
 
 .inner-page .button.light_button {
@@ -1096,6 +1107,10 @@ footer .copyright {
     color: rgb(36, 31, 22);
     padding: 0 6px; 
     text-decoration: none;
+}
+
+.pagination__page-number.current {
+    color: rgb(148, 137, 117);
 }
 
 .pagination__page-number_points {
@@ -1163,15 +1178,15 @@ footer .copyright {
     margin: 25px 0 10px;
 }
 
-.card__filters {
+.filters {
     border-collapse: collapse;
 }
 
-.card__filters tr {
+.filters tr {
     margin-right: 20px;
 }
 
-.card__select-column {
+.filters__filter {
     display: list-item;
     padding: 0;
     list-style: none;
@@ -1179,31 +1194,31 @@ footer .copyright {
     margin-bottom: 2px;
 }
 
-.card__label {
+.filters__label {
     font-size: 10px;
     color: rgb(148, 137, 117);
     text-transform: uppercase;
 }
 
-.card__select-column select {
+.filters__filter select {
     display: none;
 }
 
-.card__select-field {
+.select-field, .filters__button {
     position: relative;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
     width: 137px;
     height: 40px;
-    line-height: 42px;
+    line-height: 40px;
     padding: 0 10px;
     font-size: 11px;
     color: rgb(36, 31, 22);
     text-transform: uppercase;
 }
 
-.card__select-field:before{
+.select-field:before, .filters__button::before {
     content: '';
     position: absolute;
     width: 11px;
@@ -1211,10 +1226,11 @@ footer .copyright {
     background: url(../images/sprites.svg) -143px -23px;
     top: 15px;
     right: 7px; 
-    transition: all 0.5s linear 0s;
+    transition: all 0.2s linear 0s;
 }
 
-.card__select-column_active .card__select-field:before {
+.filters__filter_active .select-field:before,
+.filters__for-mobile_active .filters__button::before {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -1222,34 +1238,36 @@ footer .copyright {
     transform: rotate(180deg);
 }
 
-.card__select-column ul {
+.filters__filter ul {
     display: none;
+    box-sizing: border-box;
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(214, 207, 196);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
     position: absolute;
-    box-sizing: border-box;
-    top: 40px;
+    top: 43px;
     left: 0;
     z-index: 1;
 }
 
-.card__select-column.card__select-column_active ul {
-	display:block;
-}
-
-.card__select-column ul li {
+.filters__filter ul li {
     display: block;
     box-sizing: border-box;
-    border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 42px;
-    line-height: 42px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 13px;
     padding: 0 10px;
 	cursor:default;
+}
+
+.filters__filter ul li:hover {
+    background: #dacaac;
 }
 
 .black_button {
@@ -1622,6 +1640,10 @@ footer .copyright {
     .inner-page {
         padding-top: 230px;
     }
+    
+    .item {
+        width: 33.3333%;
+    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -1665,6 +1687,23 @@ footer .copyright {
     footer .menu li a {
 		text-align: center;
 		padding: 15px 0;
+    }
+    
+    .filters__button {
+        display: block;
+    }
+
+    .filters__group  {
+        display: none;
+    }
+    
+    .filters__for-mobile_active .filters__group {
+        display: block;
+        flex-direction: column;
+    }
+    
+    .filters__group .filters__filter {
+        margin: 10px 0;
     }
     
     .cart__table_wr {
@@ -1722,6 +1761,10 @@ footer .copyright {
     .carousel .one_doc {
         padding: 0 10px;
     }	
+    
+    .item {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 639px) {
@@ -1760,6 +1803,10 @@ footer .copyright {
 	
 	.caption{
         font-size: 62px;
+    }
+    
+    .item {
+        width: 100%;
     }
 }
 

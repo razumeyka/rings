@@ -8,13 +8,15 @@
     <title>Wedding Rings</title>
 </head>
 <body>
-    <div class="submenu_background"></div>
     <header>
         <div class="first_line">
             <div class="wrapper flex between">
                 <form class="search">
-                        <div class="icon"></div>
-                        <input type="text" name="name" value="" class="input">
+                        <div class="search_icon"></div>
+                        <div class="search_text">
+							<div class="search_placeholder">SEARCH</div>
+							<input type="text" name="name" value="" class="search_input">
+						</div>
                 </form>
                 <div class="header_nav">
                    <div class="select currency">
@@ -39,9 +41,9 @@
         </div>
         <div class="second_line">
             <div class="wrapper">
-                <a href="/" class="logo inner-page_logo"></a>
+                <a href="/" class="logo"></a>
                 <a class="button light_button" href="#">menu</a>
-                <nav class="navbar flex">
+                <nav class="navbar">
                     <ul class="menu">
                         <li class="with_submenu"><a href="#">Wedding</a>
                           <ul class="submenu">
@@ -116,13 +118,13 @@
                 <div class="collection__description">There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote. There is a small description of the category. Something that would interest the client. Perhaps a beautiful quote.</div>
                 <div class="collection__image_frames image_frames"></div>
             </div>
-            <table class="card__filters">
-                <tbody class="flex between">
-                    <tr>
-                        <td class="card__select-column">
-                            <select name="" id=""></select>
-                            <div class="card__select-field card__select-field_price">price</div>
-                            <form class="filters filter-price">
+            <div class="flex between">
+                <div class="filters__for-mobile flex">
+                    <div class="filters__button">фильтры</div>
+                    <div class="filters__group flex">
+                        <div class="filters__filter">
+                            <div class="select-field select-field_bordered">price</div>
+                            <form class="filters__inner filters__inner_filter-price">
                                 <p>
                                   <label for="amount">Price:</label>
                                   <input type="text" id="amount" readonly>
@@ -132,80 +134,154 @@
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 </div>
-                                <a href="#" class="button black_button">apply</a>
+                                <button type="submit" class="button black_button">apply</button>
                             </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="card__select-column">
-                            <select name="" id=""></select>
-                            <div class="card__select-field card__select-field_material">material</div>
-                            <form action="" class="filters filter-checkbox">
+                        </div>
+                        <div class="filters__filter">
+                            <div class="select-field select-field_bordered">material</div>
+                            <form action="" class="filters__inner filters__inner_filter-checkbox">
                                 <div class="flex">
-                                    <div class="filers_column">
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Black</div>            
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value="">  <div>White gold</div>       
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Gold</div>            
-                                        </label>
-                                    </div>
-                                    <div class="filers_column">
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Black</div>             
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> 
-                                            <div>White gold</div>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Gold</div>              
-                                        </label>
-                                    </div>
-                                    <div class="filers_column">
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Black</div>             
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> 
-                                            <div>White gold</div>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" id="color" name="" value=""> <div>Gold</div>              
-                                        </label>
-                                    </div>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>Black</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>White gold</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>            
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>             
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>         
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>      
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>
+                                    </label>
                                 </div>
-                                <a href="#" class="button black_button">apply</a>
+                                <button type="submit" class="button black_button">apply</button>
                             </form>                                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="card__select-column">
-                            <select name="" id=""></select>
-                            <div class="card__select-field">stone</div>                   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="card__select-column">
-                            <select name="" id=""></select>
-                            <div class="card__select-field">color</div>                  
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="card__select-column">
-                            <select name="" id=""></select>
-                            <div class="card__select-field">sort</div>
-                            <ul>
-                               <li>price</li>
-                               <li>color</li>
-                            </ul>                   
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                        <div class="filters__filter">
+                            <div class="select-field select-field_bordered">stone</div>
+                            <form action="" class="filters__inner filters__inner_filter-checkbox">
+                                <div class="flex">
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>Black</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>White gold</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>            
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>             
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>         
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>      
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button black_button">apply</button>
+                            </form>       
+                        </div>
+                        <div class="filters__filter">
+                            <div class="select-field select-field_bordered">color</div>
+                            <form action="" class="filters__inner filters__inner_filter-checkbox">
+                                <div class="flex">
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>Black</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value="">  
+                                        <div>White gold</div>       
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>            
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>             
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>         
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Black</div>      
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>White gold</div>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="color" name="" value=""> 
+                                        <div>Gold</div>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button black_button">apply</button>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+                <div class="filters__filter">
+                    <select name="" id=""></select>
+                    <div class="select-field select-field_bordered">sort</div>
+                    <ul class="filters__inner">
+                        <li>New arrivals</li>
+                        <li>Price low to high</li>
+                        <li>Price high to low</li>
+                        <li>Вest sellers</li>
+                    </ul>                   
+                </div>
+            </div>
             <div class="catalog flex">
                 <div class="item">
                     <a href="images/classic.jpg">
@@ -301,7 +377,7 @@
                 <nav class="pagination__pagination-list flex" role="navigation">
                     <a class='pagination__page-number pagination__page-number_prev' href='#'>Previous</a>
                     <span aria-current='page' class='pagination__page-number pagination__page-number_current'>1</span>
-                    <a class='pagination__page-number pagination__page-number_points' href='#'>...</a>
+                    <span class='pagination__page-number pagination__page-number_points'>...</span>
                     <a class='pagination__page-number' href='#'>4</a>
                     <a class='pagination__page-number' href='#'>5</a>
                     <a class='pagination__page-number' href='#'>6</a>

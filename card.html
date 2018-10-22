@@ -8,13 +8,15 @@
     <title>Wedding Rings</title>
 </head>
 <body>
-    <div class="submenu_background"></div>
     <header>
         <div class="first_line">
             <div class="wrapper flex between">
                 <form class="search">
-                        <div class="icon"></div>
-                        <input type="text" name="name" value="" class="input">
+                        <div class="search_icon"></div>
+                        <div class="search_text">
+							<div class="search_placeholder">SEARCH</div>
+							<input type="text" name="name" value="" class="search_input">
+						</div>
                 </form>
                 <div class="header_nav">
                    <div class="select currency">
@@ -39,9 +41,9 @@
         </div>
         <div class="second_line">
             <div class="wrapper">
-                <a href="/" class="logo inner-page_logo"></a>
+                <a href="/" class="logo"></a>
                 <a class="button light_button" href="#">menu</a>
-                <nav class="navbar flex">
+                <nav class="navbar">
                     <ul class="menu">
                         <li class="with_submenu"><a href="#">Wedding</a>
                           <ul class="submenu">
@@ -128,15 +130,15 @@
                             943.00
                         </span>
                     </p>
-                    <table class="card__filters">
+                    <table class="filters">
                         <tbody class="flex">
                             <tr>
-                                <td class="card__select-column">
-                                    <label for="" class="card__label">size</label>
+                                <td class="filters__filter">
+                                    <label for="" class="filters__label">size</label>
                                 </td>
-                                <td class="card__select-column">
+                                <td class="filters__filter">
                                     <select name="" id=""></select>
-                                    <div class="card__select-field"> Choose option</div>
+                                    <div class="select-field"> Choose option</div>
                                     <ul>
                                        <li>small</li>
                                        <li>large</li>
@@ -144,25 +146,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="card__select-column">
-                                    <label for="" class="card__label">material</label>
+                                <td class="filters__filter">
+                                    <label for="" class="filters__label">material</label>
                                 </td>
-                                <td class="card__select-column">
+                                <td class="filters__filter">
                                     <select name="" id=""></select>
-                                    <div class="card__select-field"> Choose option</div>
+                                    <div class="select-field"> Choose option</div>
                                     <ul>
                                        <li>gold</li>
                                        <li>silver</li>
-                                    </ul>                                   
+                                    </ul>                       
                                 </td>
                             </tr>
                             <tr>
-                                <td class="card__select-column">
-                                    <label for="" class="card__label">stone</label>
+                                <td class="filters__filter">
+                                    <label for="" class="filters__label">stone</label>
                                 </td>
-                                <td class="card__select-column">
+                                <td class="filters__filter">
                                     <select name="" id=""></select>
-                                    <div class="card__select-field"> Choose option</div>
+                                    <div class="select-field"> Choose option</div>
                                     <ul>
                                        <li>small</li>
                                        <li>large</li>
@@ -171,7 +173,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="button cart_button">add to cart</div>
+                    <div class="button black_button">add to cart</div>
                     <div class="card__info">
                         <div class="card__question-answer">
                             <div class="card__question">Description</div>

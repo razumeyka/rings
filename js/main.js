@@ -107,36 +107,11 @@ if ( $(window).width() > 1279 ) {
 		$(this).closest('.carousel').data('slide',slide);
     });
     
-// select
-    
-    $('.card__select-field').click(function(){
-		$('.card__select-column').not($(this).closest('.card__select-column')).removeClass('card__select-column_active');
-		$(this).parent().toggleClass('card__select-column_active');
-	})
-	
-	$('.card__select-column li').click(function(){
-		$(this).closest('.card__select-column').find('select').val($(this).data('value'));
-		$(this).closest('.card__select-column').find('.card__select-field').html($(this).html());
-		$(this).closest('.card__select-column').toggleClass('card__select-column_active');
-	});
-    
-    
-// question-answer
-    
-    $(".card__answer").hide();
-    $('.card__question').click(function(){
-        $(this).next().slideToggle(500);
-        $(this).toggleClass('card__question_active');
-    });
-    
 // filters
     
-    $('.card__select-field_price').click(function(){
-		$('.filter-price').toggleClass('filters_active');
-	})
-    
-    $('.card__select-field_material').click(function(){
-		$('.filter-checkbox').toggleClass('filters_active');
+    $('.filters__button').click(function(){
+            $(".filters__group").fadeToggle(200);
+            $('.filters__for-mobile').toggleClass('filters__for-mobile_active');
 	})
     
     $( "#slider-range" ).slider({
@@ -149,7 +124,34 @@ if ( $(window).width() > 1279 ) {
       }
     });
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ));
+    
+    $('.filters__inner_filter-checkbox label').click(function(){
+        $(this).toggleClass('active');
+	})
+    
+// select
+    
+    $('.select-field').click(function(){
+		$('.filters__filter').not($(this).closest('.filters__filter')).removeClass('filters__filter_active').parent().find(".filters__inner").fadeOut(200);
+		$(this).parent().toggleClass('filters__filter_active').find(".filters__inner").fadeToggle(200);   
+	})
+	
+	$('.filters__filter li').click(function(){
+		$(this).closest('.filters__filter').find('select').val($(this).data('value'));
+		$(this).closest('.filters__filter').find('.select-field').html($(this).html());
+		$(this).closest('.filters__filter').toggleClass('filters__filter_active');
+	});
+    
+    
+// question-answer
+    
+    $(".card__answer").hide();
+    $('.card__question').click(function(){
+        $(this).next().slideToggle(500);
+        $(this).toggleClass('card__question_active');
+    });
 });
+    
 
 
 
