@@ -132,14 +132,16 @@ if ( $(window).width() > 1279 ) {
 // select
     
     $('.select-field').click(function(){
-		$('.filters__filter').not($(this).closest('.filters__filter')).removeClass('filters__filter_active').parent().find(".filters__inner").fadeOut(200);
-		$(this).parent().toggleClass('filters__filter_active').find(".filters__inner").fadeToggle(200);   
+		$('.filters__filter').not($(this).closest('.filters__filter')).removeClass('filters__filter_active').find(".filters__inner").fadeOut(200);
+		$(this).closest('.filters__filter').toggleClass('filters__filter_active').find(".filters__inner").fadeToggle(200);   
 	})
 	
 	$('.filters__filter li').click(function(){
 		$(this).closest('.filters__filter').find('select').val($(this).data('value'));
 		$(this).closest('.filters__filter').find('.select-field').html($(this).html());
 		$(this).closest('.filters__filter').toggleClass('filters__filter_active');
+        $(this).closest(".filters__inner").fadeOut(200); 
+        
 	});
     
     
