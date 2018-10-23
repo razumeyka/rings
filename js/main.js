@@ -109,9 +109,9 @@ if ( $(window).width() > 1279 ) {
     
 // filters
     
-    $('.filters__button').click(function(){
-            $(".filters__group").fadeToggle(200);
-            $('.filters__for-mobile').toggleClass('filters__for-mobile_active');
+    $('.filters-button').click(function(){
+        $(".filters-group").fadeToggle(200);
+        $('.filters-mobile').toggleClass('active');
 	})
     
     $( "#slider-range" ).slider({
@@ -120,27 +120,27 @@ if ( $(window).width() > 1279 ) {
       max: 500,
       values: [ 75, 300 ],
       slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        $("#amount").val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ));
+    $("#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ));
     
-    $('.filters__inner_filter-checkbox label').click(function(){
-        $(this).toggleClass('active');
+    $('.filter_checkbox .filter__inner input').change(function(){
+        $(this).closest('.filter_checkbox .filter__inner label').toggleClass('active');
 	})
     
 // select
     
-    $('.select-field').click(function(){
-		$('.filters__filter').not($(this).closest('.filters__filter')).removeClass('filters__filter_active').find(".filters__inner").fadeOut(200);
-		$(this).closest('.filters__filter').toggleClass('filters__filter_active').find(".filters__inner").fadeToggle(200);   
+    $('.filter__select-field').click(function(){
+		$('.filter').not($(this).closest('.filter')).removeClass('filter_active').find(".filter__inner").fadeOut(200);
+		$(this).closest('.filter').toggleClass('filter_active').find(".filter__inner").fadeToggle(200);   
 	})
 	
-	$('.filters__filter li').click(function(){
-		$(this).closest('.filters__filter').find('select').val($(this).data('value'));
-		$(this).closest('.filters__filter').find('.select-field').html($(this).html());
-		$(this).closest('.filters__filter').toggleClass('filters__filter_active');
-        $(this).closest(".filters__inner").fadeOut(200); 
+	$('.filter li').click(function(){
+		$(this).closest('.filter').find('select').val($(this).data('value'));
+		$(this).closest('.filter').find('.filter__select-field').html($(this).html());
+		$(this).closest('.filter').toggleClass('filter_active');
+        $(this).closest(".filter__inner").fadeOut(200); 
         
 	});
     

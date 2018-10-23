@@ -119,27 +119,30 @@
                 <div class="collection__image_frames image_frames"></div>
             </div>
             <div class="flex between">
-                <div class="filters__for-mobile flex">
-                    <div class="filters__button">фильтры</div>
-                    <div class="filters__group flex">
-                        <div class="filters__filter">
-                            <div class="select-field select-field_bordered">price</div>
-                            <form class="filters__inner filters__inner_filter-price">
+                <div class="filters-mobile flex">
+                    <div class="filters-button">фильтры</div>
+                    <div class="filters-group flex">
+                        <div class="filter filter_price">
+                            <div class="filter__select-field filter__select-field_bordered">price</div>
+                            <form class="filter__inner">
                                 <p>
                                   <label for="amount">Price:</label>
-                                  <input type="text" id="amount" readonly>
+                                  <span>
+                                      <input type="text" id="amount" readonly>
+                                      <input type="text" id="amount" readonly>         
+                                  </span>
                                 </p>
                                 <div class="ui-slider" id="slider-range">
                                     <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 </div>
-                                <button type="submit" class="button black_button">apply</button>
+                                <button type="submit" class="button button_black">apply</button>
                             </form>
                         </div>
-                        <div class="filters__filter">
-                            <div class="select-field select-field_bordered">material</div>
-                            <form action="" class="filters__inner filters__inner_filter-checkbox">
+                        <div class="filter filter_checkbox">
+                            <div class="filter__select-field filter__select-field_bordered">material</div>
+                            <form action="" class="filter__inner">
                                 <div class="flex">
                                     <label>
                                         <input type="checkbox" id="color" name="" value="">  
@@ -178,12 +181,12 @@
                                         <div>Gold</div>
                                     </label>
                                 </div>
-                                <button type="submit" class="button black_button">apply</button>
+                                <button type="submit" class="button button_black">apply</button>
                             </form>                                
                         </div>
-                        <div class="filters__filter">
-                            <div class="select-field select-field_bordered">stone</div>
-                            <form action="" class="filters__inner filters__inner_filter-checkbox">
+                        <div class="filter filter_checkbox">
+                            <div class="filter__select-field filter__select-field_bordered">stone</div>
+                            <form action="" class="filter__inner">
                                 <div class="flex">
                                     <label>
                                         <input type="checkbox" id="color" name="" value="">  
@@ -222,12 +225,12 @@
                                         <div>Gold</div>
                                     </label>
                                 </div>
-                                <button type="submit" class="button black_button">apply</button>
+                                <button type="submit" class="button button_black">apply</button>
                             </form>       
                         </div>
-                        <div class="filters__filter">
-                            <div class="select-field select-field_bordered">color</div>
-                            <form action="" class="filters__inner filters__inner_filter-checkbox">
+                        <div class="filter filter_checkbox">
+                            <div class="filter__select-field filter__select-field_bordered">color</div>
+                            <form action="" class="filter__inner">
                                 <div class="flex">
                                     <label>
                                         <input type="checkbox" id="color" name="" value="">  
@@ -266,15 +269,15 @@
                                         <div>Gold</div>
                                     </label>
                                 </div>
-                                <button type="submit" class="button black_button">apply</button>
+                                <button type="submit" class="button button_black">apply</button>
                             </form> 
                         </div>
                     </div>
                 </div>
-                <div class="filters__filter">
+                <div class="filter filter_list">
                     <select name="" id=""></select>
-                    <div class="select-field select-field_bordered">sort</div>
-                    <ul class="filters__inner">
+                    <div class="filter__select-field filter__select-field_bordered">sort</div>
+                    <ul class="filter__inner">
                         <li>New arrivals</li>
                         <li>Price low to high</li>
                         <li>Price high to low</li>

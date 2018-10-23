@@ -948,19 +948,19 @@ footer .copyright {
     height: 60%;
 }
 
-.filters__for-mobile {
+.filters-mobile {
     flex-direction: column;
 }
 
-.filters__button {
+.filters-button {
     display: none;
 }
 
-.filters__group .filters__filter {
+.filters-group .filter {
     margin-right: 20px;
 }
 
-.filters__inner {
+.filter__inner {
     display: none;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
@@ -974,19 +974,19 @@ footer .copyright {
     top: 45px;
 }
 
-.filters__filter.filters__filter_active .select-field_bordered {
+.filter.filter_active .filter__select-field_bordered {
     border: 2px solid rgb(36, 31, 22);
 }
 
-.filters__inner p {
+.filter__inner p {
     margin: 0 0 25px;
 }
 
-.filters__inner input {
+.filter__inner input {
     border: none;
 }
 
-.filters__inner .black_button {
+.filter__inner .button_black {
     width: 100%;
     max-width: none;
     margin: 40px 0 0;
@@ -995,11 +995,11 @@ footer .copyright {
     font-size: 13px;
 }
 
-.filters__inner_filter-checkbox {
+.filter_checkbox .filter__inner {
     width: 450px;
 }
 
-.filters__inner_filter-checkbox label {
+.filter_checkbox .filter__inner label {
     display: block;
     box-sizing: border-box;
     width: 33.3333%;
@@ -1009,11 +1009,11 @@ footer .copyright {
     margin: 5px 0 12px;
 }
 
-.filters__inner_filter-checkbox input {
+.filter_checkbox .filter__inner input {
     display: none;
 }
 
-.filters__inner_filter-checkbox label::before {
+.filter_checkbox .filter__inner label::before {
     content: "";
     border: 1px solid rgb(214, 207, 196);
     background: rgb(255, 255, 255);
@@ -1023,11 +1023,11 @@ footer .copyright {
     left: 0;
 }
 
-.filters__inner_filter-checkbox label.active::before {
+.filter_checkbox .filter__inner label.active::before {
     background: #d6cfc4;
 }
 
-.filters__inner.filters__inner_filter-checkbox .black_button {
+.filter_checkbox .filter__inner .button_black {
     max-width: 136px;
     margin: 15px 0 5px auto;
 }
@@ -1186,7 +1186,7 @@ footer .copyright {
     margin-right: 20px;
 }
 
-.filters__filter {
+.filter {
     display: list-item;
     padding: 0;
     list-style: none;
@@ -1194,17 +1194,17 @@ footer .copyright {
     margin-bottom: 2px;
 }
 
-.filters__label {
+.filter__label {
     font-size: 10px;
     color: rgb(148, 137, 117);
     text-transform: uppercase;
 }
 
-.filters__filter select {
+.filter select {
     display: none;
 }
 
-.select-field, .filters__button {
+.filter__select-field, .filters-button {
     position: relative;
     box-sizing: border-box;
     border: 1px solid rgb(214, 207, 196);
@@ -1218,7 +1218,7 @@ footer .copyright {
     text-transform: uppercase;
 }
 
-.select-field:before, .filters__button::before {
+.filter__select-field:before, .filters-button::before {
     content: '';
     position: absolute;
     width: 11px;
@@ -1229,7 +1229,7 @@ footer .copyright {
     transition: all 0.2s linear 0s;
 }
 
-.filters__filter_active .select-field:before,
+.filter_active .filter__select-field:before,
 .filters__for-mobile_active .filters__button::before {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -1238,7 +1238,7 @@ footer .copyright {
     transform: rotate(180deg);
 }
 
-.filters__filter ul {
+.filter_list .filter__inner {
     display: none;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
@@ -1254,7 +1254,7 @@ footer .copyright {
     z-index: 1;
 }
 
-.filters__filter ul li {
+.filter_list .filter__inner li {
     display: block;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
@@ -1266,11 +1266,11 @@ footer .copyright {
 	cursor:default;
 }
 
-.filters__filter ul li:hover {
+.filter_list .filter__inner li:hover {
     background: #dacaac;
 }
 
-.black_button {
+.button_black {
     background: rgb(36, 31, 22);
     border: none;
     border-radius: unset;
@@ -1554,7 +1554,7 @@ footer .copyright {
     font-weight: 500;
 }
 
-.cart .black_button {
+.cart .button_black {
     margin: 0 0 0 auto;
     max-width: 260px;
 }
@@ -1689,20 +1689,20 @@ footer .copyright {
 		padding: 15px 0;
     }
     
-    .filters__button {
+    .filters-button {
         display: block;
     }
 
-    .filters__group  {
+    .filters-group  {
         display: none;
     }
     
-    .filters__for-mobile_active .filters__group {
+    .filters-mobile.active .filters-group {
         display: block;
         flex-direction: column;
     }
     
-    .filters__group .filters__filter {
+    .filters-group .filter {
         margin: 10px 0;
     }
     
@@ -1722,7 +1722,7 @@ footer .copyright {
         text-align: right;
     }
     
-    .cart .black_button {
+    .cart .button_black {
         max-width: 190px;
     }
 }
