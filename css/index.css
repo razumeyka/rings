@@ -979,7 +979,7 @@ footer .copyright {
 }
 
 .filter__inner p {
-    margin: 0 0 25px;
+    margin: 0 0 7px;
 }
 
 .filter__inner input {
@@ -1090,6 +1090,7 @@ footer .copyright {
     font-size: 16px;
     color: rgb(148, 137, 117);
     line-height: 1; 
+    margin-top: 5px;
 }
 
 .inner-page .button.light_button {
@@ -1109,7 +1110,7 @@ footer .copyright {
     text-decoration: none;
 }
 
-.pagination__page-number.current {
+.pagination__page-number_current {
     color: rgb(148, 137, 117);
 }
 
@@ -1187,9 +1188,7 @@ footer .copyright {
 }
 
 .filter {
-    display: list-item;
-    padding: 0;
-    list-style: none;
+    display: inline-block;
     position: relative;
     margin-bottom: 2px;
 }
@@ -1446,6 +1445,10 @@ footer .copyright {
     width: 180px;
 }
 
+.cart__table td:last-child {
+    padding: 0;
+}
+
 .cart__table td.cart__product {
     width: auto;
 }
@@ -1527,8 +1530,8 @@ footer .copyright {
 .cart__remove-button {
     display: block;
     background: rgb(36, 31, 22);
-    width: 10px;
-    height: 10px;
+    width: 40px;
+    height: 40px;
 }
 
 .cart__order-total {
@@ -1720,6 +1723,7 @@ footer .copyright {
     
     .cart__price-total {
         text-align: right;
+        width: auto;
     }
     
     .cart .button_black {
