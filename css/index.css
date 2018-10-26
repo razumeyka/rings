@@ -321,7 +321,7 @@ header.fixed .logo {
 	color: rgb(148, 137, 117);
 }
 
-header .menu .with_submenu>a::after {
+header .menu .menu-item-has-children>a::after {
     content: "";
     background: url(../images/sprites.svg) no-repeat -139px -22px;
     width: 13px;
@@ -329,7 +329,7 @@ header .menu .with_submenu>a::after {
     display: inline-block;
 }
 
-.menu .submenu {
+.menu .sub-menu {
 	position: absolute;
     margin: 0; 
     top: 53px;
@@ -346,15 +346,15 @@ header .menu .with_submenu>a::after {
 } 
 
 
-.menu .submenu.active{
+.menu .sub-menu.active{
     padding-top: 20px;
 }
 
-.menu .submenu li {
+.menu .sub-menu li {
     position: relative; 
 }
 
-.menu .submenu li a {
+.menu .sub-menu li a {
 	position: relative;
     text-decoration: none;
     font-size: 14px;
@@ -1594,11 +1594,11 @@ footer .copyright {
 		text-align: center;
     }
 	
-	header .menu .with_submenu>a::after{
+	header .menu .menu-item-has-children>a::after{
 		display:none;
 	}
     
-    .menu .submenu {
+    .menu .sub-menu {
         position: static;    
 		box-shadow: none;
 		width: 100%;
@@ -1607,7 +1607,7 @@ footer .copyright {
 		transition: none;
     }
     
-    header .menu .with_submenu::after {
+    header .menu .menu-item-has-children::after {
         left: 0;
         right: auto;
         top: 16px;

@@ -43,12 +43,12 @@ $(document).ready(function(){
         $('header .menu').slideToggle(300);
     });
 
-// submenu 
+// sub-menu 
 
- $('.menu li.with_submenu>a' ).click(function(e){
+ $('.menu li.menu-item-has-children>a' ).click(function(e){
 	if($('header .button.light_button').is(':visible')){
 		e.preventDefault();
-		$(this).closest('li').find('.submenu').slideToggle(300);
+		$(this).closest('li').find('.sub-menu').slideToggle(300);
 	}
 });    
 
@@ -56,7 +56,7 @@ $(document).ready(function(){
 if ( $(window).width() > 1279 ) {
 		
 // fixed menu 1279 		
-
+/*Этого блока более не существует. Может быть дропнем?*/
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 1){  
 			$('header').addClass("fixed");
@@ -68,14 +68,14 @@ if ( $(window).width() > 1279 ) {
 		}
 	});
 	
-// submenu 1279
+// sub-menu 1279
     
 	$('.menu li').mouseenter(function () { 
-		$(this).find('.submenu').fadeIn(200).addClass('active'); 
+		$(this).find('.sub-menu').fadeIn(200).addClass('active'); 
 	});
 	
 	$('.menu li').mouseleave(function () { 
-		$(this).find('.submenu').fadeOut(200).removeClass('active'); 
+		$(this).find('.sub-menu').fadeOut(200).removeClass('active'); 
 	});
 		
 }
