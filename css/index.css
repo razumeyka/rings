@@ -1559,7 +1559,8 @@ footer .copyright {
 
 .cart .button_black {
     margin: 0 0 0 auto;
-    max-width: 260px;
+    max-width: none;
+    width: 260px;
 }
 
 
@@ -1727,7 +1728,7 @@ footer .copyright {
     }
     
     .cart .button_black {
-        max-width: 190px;
+        width: 190px;
     }
 }
 
