@@ -452,7 +452,7 @@ header .menu .menu-item-has-children>a::after {
     height: 75%;
 }
 
-.slider_screen h1, h2 {
+.slider_screen h1,.slider_screen h2 {
     font: 700 60px "Unna";
     color: rgb(249, 245, 239);
 }
