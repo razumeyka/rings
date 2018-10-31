@@ -152,6 +152,17 @@ if ( $(window).width() > 1279 ) {
         $(this).next().slideToggle(500);
         $(this).toggleClass('card__question_active');
     });
+	
+		
+	$('.cart__quantity-buttons button').click(function(){
+		$input=$(this).closest('.cart__quantity-buttons').find('input');
+		if($(this).hasClass('cart__quantity-input_minus')){
+			if(parseInt($input.val(),10)-1>parseInt($input.attr('min'),10)) $input.val(parseInt($input.val(),10)-1);
+		}
+		if($(this).hasClass('cart__quantity-input_plus')){
+			$input.val(parseInt($input.val(),10)+1);
+		}
+	});
 });
     
 
