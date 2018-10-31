@@ -460,7 +460,7 @@ header .menu .menu-item-has-children>a::after {
 .slider_screen .slide_description {
     font-size: 18px;
     color: rgb(249, 245, 239);
-    margin: 18px 0;
+    margin: 18px 0 40px;
     line-height: 1.7;
 }
 
@@ -483,9 +483,7 @@ header .menu .menu-item-has-children>a::after {
 }
 
 .slider_screen .button {
-    position: absolute;
-    left: 95px;
-    bottom: 118px;
+    max-width: 230px;
 }
 
 /* range_screen */
@@ -1188,7 +1186,7 @@ footer .copyright {
 }
 
 .filter {
-    display: inline-block;
+    display: block;
     position: relative;
     margin-bottom: 2px;
 }
@@ -1342,7 +1340,7 @@ footer .copyright {
 
 .card__controls {
     position: absolute;
-    bottom: 0;
+    bottom: 6px;
     left: 0; 
     border: 1px solid rgb(214, 207, 196);
     background-color: rgb(255, 255, 255);
@@ -1637,6 +1635,10 @@ footer .copyright {
         text-align: center;
     }
     
+    .slider_screen .button {
+        margin: 0 auto;
+    }
+
     .range_screen .plates_wr {
         grid-gap:20px;
     }
@@ -1708,6 +1710,10 @@ footer .copyright {
     
     .filters-group .filter {
         margin: 10px 0;
+    }
+    
+    .card__details {
+        margin: 0;
     }
     
     .cart__table_wr {
@@ -1827,7 +1833,6 @@ footer .copyright {
 .coin-slider a{ 
     text-decoration: none; 
     outline: none; 
-    border: none; 
 }
 
 .coin-slider a img {
@@ -1944,6 +1949,94 @@ footer .copyright {
     width: 6px;
     height: 1px;
     z-index: 3;
+}
+
+/*super-slider-range*/
+
+.super_slider{
+    display: flex;
+    flex-wrap: nowrap;
+    width:650px;
+    padding-top: 7px;
+}
+
+.slides_list{
+    width: 200px;
+    height: 600px;
+    float: left;
+    overflow: hidden;
+}
+
+.super_slider a{
+    width: 110px;
+    font-size: 22px;
+}
+    
+.super_slider a img{
+    width:110px;
+    height:126px;
+}
+
+.big_image .img{
+    width:530px;
+    height:600px;
+    position: relative;
+}
+
+.big_image .img:before {
+    content: "";
+    display: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    background: url(../images/sprites.svg) no-repeat -3px -97px rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.big_image:hover .img:before {
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    
+.big_image{
+    display:none;
+}
+
+.slides_list{
+    width:600%;
+    transition:transform 0.2s linear;
+}
+    
+.notrans{
+    transition:no;
+}
+    
+.super_slider{
+    width:500px;
+    position:relative;
+    height:300px;
+    overflow:hidden;
+}
+    
+.super_slider a{
+    display:block;
+    width:500px;
+    text-align:center;
+    float:left;
+}
+    
+.super_slider a img{
+    max-width:500px;
+    max-height:300px;
+}
+    
+.super_slider .slides_list{
+    position:absolute;
+    }
 }
 
 

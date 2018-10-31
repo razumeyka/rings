@@ -84,7 +84,7 @@ if ( $(window).width() > 1279 ) {
 
     $('#coin-slider').coinslider({
         width: 1230,
-        height: 500,
+        height: 485,
         opacity: 1,
     });
     

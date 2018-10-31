@@ -6,7 +6,7 @@ $(document).ready(function(){
 		
 		e.preventDefault();
 		if($('.big_image .img').is(':visible')){
-			$('.big_image .img').css('background','url('+$(this).attr('href')+') no-repeat center').css('background-size','contain');
+			$('.big_image .img').css('background','url('+$(this).attr('href')+') no-repeat center').css('background-size','cover');
 		}
 	});
 	
@@ -37,8 +37,5 @@ $(document).ready(function(){
 		currentX=slide*width;
 		$('.slides_list').css('transform','translateX('+currentX+'px)')
 		offsetX=currentX;
-	
 	})
-	
-	
 });
