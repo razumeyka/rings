@@ -54,19 +54,6 @@ $(document).ready(function(){
 
     
 if ( $(window).width() > 1279 ) {
-		
-// fixed menu 1279 		
-/*Этого блока более не существует. Может быть дропнем?*/
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 1){  
-			$('header').addClass("fixed");
-			$(".submenu_background").addClass('fixed');
-		}
-		else {
-			$('header').removeClass("fixed");
-			 $(".submenu_background").removeClass('fixed');
-		}
-	});
 	
 // sub-menu 1279
     
