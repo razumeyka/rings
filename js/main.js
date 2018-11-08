@@ -51,11 +51,10 @@ $(document).ready(function(){
 		$(this).closest('li').find('.sub-menu').slideToggle(300);
 	}
 });    
-
+    
+// sub-menu 1279
     
 if ( $(window).width() > 1279 ) {
-	
-// sub-menu 1279
     
 	$('.menu li').mouseenter(function () { 
 		$(this).find('.sub-menu').fadeIn(200).addClass('active'); 
@@ -115,6 +114,15 @@ if ( $(window).width() > 1279 ) {
     $('.filter_checkbox .filter__inner input').change(function(){
         $(this).closest('.filter_checkbox .filter__inner label').toggleClass('active');
 	})
+    
+// shipping-details
+    
+	$('.card__shipping').mouseenter(function () { 	          $(this).find('.card__shipping_details').fadeIn(200); 
+	});
+	
+	$('.card__shipping').mouseleave(function () { 
+		$(this).find('.card__shipping_details').fadeOut(200); 
+	});
     
 // select
     

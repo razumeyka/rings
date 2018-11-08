@@ -1132,7 +1132,8 @@ footer .copyright {
 }
 
 .card__photos {
-    width: 650px;
+    width: 53%;
+    position: relative;
 }
 
 .card__details {
@@ -1143,6 +1144,7 @@ footer .copyright {
 .card__name {
     font: 700 40px "Unna";
     color: rgb(36, 31, 22);
+    margin: 0;
 }
 
 .card__description {
@@ -1152,7 +1154,7 @@ footer .copyright {
     margin: 12px 0 16px;
 }
 
-.card__shipping a {
+.card__shipping {
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 10px;
@@ -1161,6 +1163,8 @@ footer .copyright {
     text-decoration: none;
     padding: 2px 12px;
     margin-right: 10px;
+    cursor: pointer;
+    position: relative;
 }
 
 .card__shipping_free {
@@ -1169,6 +1173,16 @@ footer .copyright {
 
 .card__shipping_express {
     background-color: rgb(205, 223, 175);
+}
+
+.card__shipping_details {
+    display: none;
+    background: #ffffff;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: 1;
 }
 
 .card__price {
@@ -1293,6 +1307,7 @@ footer .copyright {
     box-sizing: border-box;
     border-top: 1px solid rgb(214, 207, 196);
     padding: 15px 0 15px 40px;
+    cursor:pointer;
 }
 
 .card__info {
@@ -1301,16 +1316,16 @@ footer .copyright {
 
 .card__question::before {
     content: "";
-    background: url('../images/sprites.svg') no-repeat -107px -111px;
-	width: 14px;
-	height: 13px;
+    background: url(../images/sprites.svg) no-repeat -106px -110px;
+    width: 15px;
+    height: 13px;
     position: absolute;
     left: 10px;
     top: 20px;
 }
 
 .card__question.card__question_active:before {
-    background-position: -134px -110px;
+    background-position: -133px -110px;
 }
 
 .card__answer {
@@ -1336,43 +1351,6 @@ footer .copyright {
     position: absolute;
     left: 10px;
     top: 0;
-}
-
-.card__controls {
-    position: absolute;
-    bottom: 6px;
-    left: 0; 
-    border: 1px solid rgb(214, 207, 196);
-    background-color: rgb(255, 255, 255);
-    width: 60px;
-    height: 25px;
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-.card__control{
-    background: url('../images/sprites.svg') no-repeat -47px -110px;
-	width: 15px;
-	height: 13px;
-    float: left;
-	cursor:pointer;
-}
-
-.card__control_next{
-    background-position: -70px -110px;
-    float: right;
-}
-
-.card__controls::before {
-    content: "";
-    background-color: rgb(148, 137, 117);
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 4px;
-    width: 1px;
-    height: 16px;
 }
 
 .related-items {
@@ -1953,35 +1931,50 @@ footer .copyright {
 
 /*super-slider-range*/
 
-.super_slider{
+.super_slider {
     display: flex;
     flex-wrap: nowrap;
-    width:650px;
+    width:100%;
     padding-top: 7px;
 	overflow:hidden;
 	height:600px;
 }
-.super_slider .controls{
-	display:none;
-}
-.slides_list{
+
+.slides_list {
     width: 200px;
-    
     float: left;
+    margin-right: 20px;
 }
 
-.super_slider a{
+.super_slider a {
+    display:block;
     width: 110px;
-    font-size: 22px;
-	display:block;
+    font-size: 0;
+    margin-bottom: 10px;
+    position: relative;
 }
     
-.super_slider a img{
+.super_slider a img {
     width:110px;
     height:126px;
 }
 
-.big_image .img{
+.super_slider a::before {
+    content: "";
+    background: rgba(255, 255, 255, 0.4);
+    width: 110px;
+    height: 126px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.super_slider a.active::before  {
+    display: block; 
+}
+
+.big_image .img {
     width:530px;
     height:600px;
     position: relative;
@@ -1993,15 +1986,56 @@ footer .copyright {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.8);
     background: url(../images/sprites.svg) no-repeat -3px -97px rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
     width: 36px;
     height: 36px;
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 10px;
 }
 
 .big_image:hover .img:before {
     display: block;
+}
+
+.card__controls {
+    position: absolute;
+    bottom: -45px;
+    left: 0; 
+    border: 1px solid rgb(214, 207, 196);
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    height: 25px;
+    box-sizing: border-box;
+}
+
+.card__control  {
+    background: url(../images/sprites.svg) no-repeat -43px -105px;
+    width: 28px;
+    height: 23px;
+    float: left;
+    cursor: pointer;
+}
+
+.card__control_next{
+    background-position: -61px -105px;
+    float: right;
+}
+
+.card__controls::before {
+    content: "";
+    background-color: rgb(148, 137, 117);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 4px;
+    width: 1px;
+    height: 16px;
+}
+
+.controls-mobile {
+	display:none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2020,12 +2054,16 @@ footer .copyright {
 }
     
 .super_slider{
-    width:500px;
     position:relative;
     height:300px;
     overflow:hidden;
 }
-.super_slider .controls{
+    
+.card__controls {
+    display: none;    
+}
+    
+.controls-mobile {
 	display:block;
 	position:absolute;
 	bottom:0;
@@ -2037,17 +2075,19 @@ footer .copyright {
 	justify-content:center;
     flex-direction: row-reverse;
 }    
-.super_slider .control{
+    
+.controls-mobile__control{
 	background:red;
 	border-radius:50%;
 	width:10px;
 	height:10px;
 	display:block;
 }
-.super_slider .control.active{
+    
+.controls-mobile__control.active{
 	background:black;
-	
 }
+    
 .super_slider a{
     display:block;
     width:500px;
