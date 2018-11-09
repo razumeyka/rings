@@ -78,7 +78,7 @@ if ( $(window).width() > 1279 ) {
     
     $('.carousel .next,.carousel .prev').click(function(){
         console.log('click carousel');
-        var countslides=jQuery('.review_container').children().children().length-Math.round(parseFloat(jQuery('.review_wrapper').css('width'))/parseFloat(jQuery('.one_doc').css('width')));
+        var countslides=jQuery('.content_container').children().children().length-Math.round(parseFloat(jQuery('.content_wrapper').css('width'))/parseFloat(jQuery('.one_doc').css('width')));
         var slide=$(this).closest('.carousel').data('slide');
         console.log(countslides);
         if($(this).hasClass('next')){
