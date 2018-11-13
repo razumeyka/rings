@@ -948,6 +948,7 @@ footer .copyright {
 
 .filters-mobile {
     flex-direction: column;
+    position: relative;
 }
 
 .filters-button {
@@ -1247,6 +1248,14 @@ footer .copyright {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+
+.filter__caption {
+    display: none;
+    font-size: 14px;
+    color: rgb(36, 31, 22);
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 .filter_list .filter__inner {
@@ -1673,6 +1682,10 @@ footer .copyright {
 		padding: 15px 0;
     }
     
+    .filters-buttons {
+        flex-direction: row-reverse;
+    }
+    
     .filters-button {
         display: block;
     }
@@ -1684,10 +1697,36 @@ footer .copyright {
     .filters-mobile.active .filters-group {
         display: block;
         flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        top: 45px;
+        right: 0;
     }
     
-    .filters-group .filter {
-        margin: 10px 0;
+    .filters-mobile.active .filter__select-field {
+        display: none;
+    }
+    
+    .filter__caption {
+        display: block;
+    }
+
+    .filters-mobile.active .filter__inner {
+        display: block;
+        position: static;
+        width: 290px;
+    }
+    
+    .filters-mobile.active .filter {
+        margin: 0;
+    }
+    
+    .filters-mobile.active .filter_checkbox .filter__inner label {
+        width: 50%;
+    }
+
+    .filter_checkbox .filter__inner .button_black {
+        max-width: none;
     }
     
     .card__photos {
