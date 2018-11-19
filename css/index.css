@@ -1707,7 +1707,7 @@ footer .copyright {
         right: 0;
     }
     
-    .filters-mobile.active .filter__select-field {
+    .filters-mobile .filter__select-field {
         display: none;
     }
     
@@ -2119,6 +2119,7 @@ footer .copyright {
         display:block;
         float:left;
         height: 500px;
+        text-align: center;
     }
 
     .super_slider a img{
@@ -2166,13 +2167,7 @@ footer .copyright {
 
 @media screen and (max-width: 767px) {
 
-    .super_slider a img {
-        width: 100%;
-    }
-    
-    .controls-mobile {
-        max-width: none;
-    }
+
 }
 
 
