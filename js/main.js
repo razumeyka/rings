@@ -96,6 +96,7 @@ if ( $(window).width() > 1279 ) {
 // filters
     
     $('.filters-button').click(function(){
+        $(this).toggleClass("filters-button_active");
         $(".filters-group").fadeToggle(200);
         $('.filters-mobile').toggleClass('active');
 	})
@@ -127,7 +128,7 @@ if ( $(window).width() > 1279 ) {
 // select
     
     $('.filter__select-field').click(function(){
-		$('.filter').not($(this).closest('.filter')).removeClass('filter_active').find(".filter__inner").fadeOut(200);
+		$('.filter').not($(this).closest('.filter')).not(".filters-mobile .filter").removeClass('filter_active').find(".filter__inner").fadeOut(200);
 		$(this).closest('.filter').toggleClass('filter_active').find(".filter__inner").fadeToggle(200);   
 	})
 	
