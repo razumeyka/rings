@@ -43,8 +43,8 @@ $(document).ready(function(){
 			if(slide>0)slide=0;
 			if(slide<-count-1) slide=-count;
 			currentX=slide*width;
-			$('.super_slider .control').removeClass('active');
-			$('.super_slider .control').eq(slide-1).addClass('active');
+			$('.super_slider .controls-mobile__control').removeClass('active');
+			$('.super_slider .controls-mobile__control').eq(slide-1).addClass('active');
 			$('.slides_list').css('transform','translateX('+slide/(count+1)*100+'%)');
 			activeslide=slide;
 		});

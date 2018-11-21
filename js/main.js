@@ -56,6 +56,17 @@ $(document).ready(function(){
     
 if ( $(window).width() > 1279 ) {
     
+	$(window).scroll(function() {	
+		if ($(this).scrollTop() > 1){  	
+			$('header').addClass("fixed");	
+			$(".submenu_background").addClass('fixed');	
+		}	
+		else {	
+			$('header').removeClass("fixed");	
+			 $(".submenu_background").removeClass('fixed');	
+		}	
+	});
+	
 	$('.menu li').mouseenter(function () { 
 		$(this).find('.sub-menu').fadeIn(200).addClass('active'); 
 	});
