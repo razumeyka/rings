@@ -106,12 +106,6 @@ if ( $(window).width() > 1279 ) {
     
 // filters
     
-    $('.filters-button').click(function(){
-        $(this).toggleClass("filters-button_active");
-        $(".filters-group").fadeToggle(200);
-        $('.filters-mobile').toggleClass('active');
-	})
-    
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
@@ -139,9 +133,22 @@ if ( $(window).width() > 1279 ) {
 // select
     
     $('.filter__select-field').click(function(){
-		$('.filter').not($(this).closest('.filter')).not(".filters-mobile .filter").removeClass('filter_active').find(".filter__inner").fadeOut(200);
-		$(this).closest('.filter').toggleClass('filter_active').find(".filter__inner").fadeToggle(200);   
-	})
+        $(this).closest('.filter').toggleClass('filter_active').find(".filter__inner").fadeToggle(200); 
+        if ( $(window).width() > 1023 ) {   
+            $('.filter').not($(this).closest('.filter')).removeClass('filter_active').find(".filter__inner").fadeOut(200);    
+        } else {
+            $(".filters-group").fadeOut(200);
+                $(".filters-button").removeClass("filters-button_active");
+       $('.filters-mobile').removeClass('active');
+            }
+      })
+
+        $('.filters-mobile .filters-button').click(function(){
+            $(this).toggleClass("filters-button_active");
+            $(".filters-group").fadeToggle(200);
+            $('.filters-mobile').toggleClass('active');
+            $('.filter_sort').removeClass('filter_active').find(".filter__inner").fadeOut(200);
+      });
 	
 	$('.filter li').click(function(){
 		$(this).closest('.filter').find('select').val($(this).data('value'));
@@ -150,7 +157,7 @@ if ( $(window).width() > 1279 ) {
         $(this).closest(".filter__inner").fadeOut(200); 
         
 	});
-    
+      
     
 // question-answer
     
